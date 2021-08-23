@@ -17,6 +17,10 @@ namespace DirectoryManager2
         public bool maindirectoryexists;
         public bool secondarydirectoryexists;
         public DeleteFolderStats deletefolderstats;
+        IEnumerable<string> maindirectoryfolders_IEnum;
+        IEnumerable<string> secondarydirectoryfolders_IEnum;
+        List<string> maindirectoryfolders_List = new List<string>();
+        List<string> secondarydirectoryfolders_List = new List<string>();
 
         public DeleteFolders()
         {
@@ -73,16 +77,16 @@ namespace DirectoryManager2
             }
 
             // Liste alle Ordner
-            var maindirectoryfolders_IEnum = Directory.EnumerateDirectories(textEdit_maindirectorypath.Text);
-            var secondarydirectoryfolders_IEnum = Directory.EnumerateDirectories(textEdit_secondarydirectorypath.Text);
+            maindirectoryfolders_IEnum = Directory.EnumerateDirectories(textEdit_maindirectorypath.Text);
+            secondarydirectoryfolders_IEnum = Directory.EnumerateDirectories(textEdit_secondarydirectorypath.Text);
 
             // Zähle Ordner
             deletefolderstats.FoldersInMainCollection = maindirectoryfolders_IEnum.Count();
             deletefolderstats.FoldersToDelete = secondarydirectoryfolders_IEnum.Count();
 
             // Zähle übereinstimmende Verzeichnisse
-            List<string> maindirectoryfolders_List = new List<string>();
-            List<string> secondarydirectoryfolders_List = new List<string>();
+            maindirectoryfolders_List = new List<string>();
+            secondarydirectoryfolders_List = new List<string>();
 
             foreach (var item in maindirectoryfolders_IEnum)
             {
@@ -128,7 +132,27 @@ namespace DirectoryManager2
 
         private void simpleButtonBereinigen_Click(object sender, EventArgs e)   // lösche übereinstimmende Ordner in Sammlung
         {
+            if (maindirectoryfolders_IEnum == null || maindirectoryfolders_IEnum.Count() == 0 || secondarydirectoryfolders_List == null || secondarydirectoryfolders_List.Count == 0)
+            {
+                return;
+            }
 
+            foreach (var item in secondarydirectoryfolders_List)
+            {
+                if (maindirectoryfolders_IEnum.Any(x => x.Contains(item)))
+                {
+                    var match = maindirectoryfolders_IEnum.Where(x => x.Contains(item)).FirstOrDefault();
+                }
+            }
+            foreach (var item in maindirectoryfolders_List)
+            {
+                if (item.Contains(item))
+                {
+                    Directory.Delete();
+                }
+            }
         }
+
+
     }
 }
