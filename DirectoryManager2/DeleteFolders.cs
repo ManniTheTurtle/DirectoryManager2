@@ -37,7 +37,6 @@ namespace DirectoryManager2
                 {
                     textEdit_maindirectorypath.Text = fbd.SelectedPath;
                 }
-
             }
         }
 
@@ -120,7 +119,15 @@ namespace DirectoryManager2
             propertyGridControl1.Enabled = true;
 
 
-            
+            // Schalte "Bereinigen" Button frei
+            if (deletefolderstats.EquivaltentFoldersFound > 0)
+            {
+                simpleButtonBereinigen.Enabled = true;
+            }
+        }
+
+        private void simpleButtonBereinigen_Click(object sender, EventArgs e)   // lösche übereinstimmende Ordner in Sammlung
+        {
 
         }
     }
