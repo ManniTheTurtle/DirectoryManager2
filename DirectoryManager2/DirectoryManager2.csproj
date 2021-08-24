@@ -60,6 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateFolders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CreateFolders.Designer.cs">
+      <DependentUpon>CreateFolders.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeleteFolders.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CreateFolders.resx">
+      <DependentUpon>CreateFolders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DeleteFolders.resx">
       <DependentUpon>DeleteFolders.cs</DependentUpon>
     </EmbeddedResource>

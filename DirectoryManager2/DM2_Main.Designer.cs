@@ -32,17 +32,21 @@ namespace DirectoryManager2
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DM2_Main));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.createFolders1 = new DirectoryManager2.CreateFolders();
             this.deleteFolders1 = new DirectoryManager2.DeleteFolders();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -51,9 +55,10 @@ namespace DirectoryManager2
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.barButtonItem2});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 2;
+            this.ribbonControl1.MaxItemId = 3;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -68,6 +73,15 @@ namespace DirectoryManager2
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Ordner aus Dateinamen erzeugen";
+            this.barButtonItem2.Id = 2;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -78,10 +92,12 @@ namespace DirectoryManager2
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.createFolders1);
             this.layoutControl1.Controls.Add(this.deleteFolders1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 158);
@@ -91,11 +107,18 @@ namespace DirectoryManager2
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // createFolders1
+            // 
+            this.createFolders1.Location = new System.Drawing.Point(12, 225);
+            this.createFolders1.Name = "createFolders1";
+            this.createFolders1.Size = new System.Drawing.Size(965, 89);
+            this.createFolders1.TabIndex = 5;
+            // 
             // deleteFolders1
             // 
             this.deleteFolders1.Location = new System.Drawing.Point(12, 12);
             this.deleteFolders1.Name = "deleteFolders1";
-            this.deleteFolders1.Size = new System.Drawing.Size(965, 302);
+            this.deleteFolders1.Size = new System.Drawing.Size(965, 209);
             this.deleteFolders1.TabIndex = 4;
             // 
             // Root
@@ -103,7 +126,8 @@ namespace DirectoryManager2
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1});
+            this.layoutControlItem1,
+            this.layoutControlItem2});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(989, 326);
             this.Root.TextVisible = false;
@@ -113,10 +137,20 @@ namespace DirectoryManager2
             this.layoutControlItem1.Control = this.deleteFolders1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(969, 306);
+            this.layoutControlItem1.Size = new System.Drawing.Size(969, 213);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             this.layoutControlItem1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.createFolders1;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 213);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(969, 93);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            this.layoutControlItem2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // DM2_Main
             // 
@@ -133,6 +167,7 @@ namespace DirectoryManager2
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,6 +183,9 @@ namespace DirectoryManager2
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DeleteFolders deleteFolders1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private CreateFolders createFolders1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
     }
 }
 

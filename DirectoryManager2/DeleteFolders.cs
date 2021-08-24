@@ -21,6 +21,7 @@ namespace DirectoryManager2
         IEnumerable<string> secondarydirectoryfolders_IEnum;
         List<string> maindirectoryfolders_List = new List<string>();
         List<string> secondarydirectoryfolders_List = new List<string>();
+        List<string> DeletedFoldersCheckList = new List<string>();
 
         public DeleteFolders()
         {
@@ -142,17 +143,33 @@ namespace DirectoryManager2
                 if (maindirectoryfolders_IEnum.Any(x => x.Contains(item)))
                 {
                     var match = maindirectoryfolders_IEnum.Where(x => x.Contains(item)).FirstOrDefault();
+
+                    if (match != null)
+                    {
+                        Directory.Delete(match);
+                        DeletedFoldersCheckList.Add(match);
+                    }
                 }
             }
-            foreach (var item in maindirectoryfolders_List)
+
+            //Teste ob Ordner gelöscht wurden
+            int counter = 0;
+            foreach (var item in DeletedFoldersCheckList)
             {
-                if (item.Contains(item))
+                if (!Directory.Exists(item))
                 {
-                    Directory.Delete();
+                    counter++;
+                    labelControl3.Text += item + " wurde gelöscht" + Environment.NewLine;
+                }
+
+                labelControl2.Text = counter.ToString() + " Verzeichnisse wurden gelöscht";
+
+                if (deletefolderstats.EquivaltentFoldersFound == counter)
+                {
+                    labelControl2.ForeColor = Color.DarkGreen;
+                    labelControl2.Text += " (Alle)";
                 }
             }
         }
-
-
     }
 }
