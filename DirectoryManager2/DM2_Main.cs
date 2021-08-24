@@ -27,9 +27,9 @@ namespace DirectoryManager2
                     usercontrols_List.Add(item as LayoutControlItem);
                 }
             }
-
         }
 
+        // Ordner löschen Button
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             foreach (var item in usercontrols_List)
@@ -40,6 +40,7 @@ namespace DirectoryManager2
             layoutControlItem1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
         }
 
+        // Ordnernamen aus Dateinamen erstellen Button
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             foreach (var item in usercontrols_List)
@@ -48,6 +49,17 @@ namespace DirectoryManager2
             }
 
             layoutControlItem2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+        }
+
+        // Sammlung auf Fehler prüfen
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)  
+        {
+            foreach (var item in usercontrols_List)
+            {
+                item.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            }
+
+            layoutControlItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
         }
     }
 }

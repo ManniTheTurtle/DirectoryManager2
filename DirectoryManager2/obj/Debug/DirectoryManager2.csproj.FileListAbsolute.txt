@@ -108,3 +108,4 @@ U:\Repositiories\DirectoryManager2\DirectoryManager2\bin\Debug\es\DevExpress.Xtr
 U:\Repositiories\DirectoryManager2\DirectoryManager2\bin\Debug\ja\DevExpress.XtraVerticalGrid.v21.1.resources.dll
 U:\Repositiories\DirectoryManager2\DirectoryManager2\bin\Debug\ru\DevExpress.XtraVerticalGrid.v21.1.resources.dll
 U:\Repositiories\DirectoryManager2\DirectoryManager2\obj\Debug\DirectoryManager2.CreateFolders.resources
+U:\Repositiories\DirectoryManager2\DirectoryManager2\obj\Debug\DirectoryManager2.CheckCollection.resources

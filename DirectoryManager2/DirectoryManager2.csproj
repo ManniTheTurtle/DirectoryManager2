@@ -60,6 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckCollection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CheckCollection.Designer.cs">
+      <DependentUpon>CheckCollection.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateFolders.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CheckCollection.resx">
+      <DependentUpon>CheckCollection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateFolders.resx">
       <DependentUpon>CreateFolders.cs</DependentUpon>
     </EmbeddedResource>
