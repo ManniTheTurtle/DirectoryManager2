@@ -30,6 +30,8 @@ namespace DirectoryManager2
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
@@ -51,10 +53,12 @@ namespace DirectoryManager2
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).BeginInit();
@@ -70,12 +74,16 @@ namespace DirectoryManager2
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.simpleButton11);
+            this.layoutControl1.Controls.Add(this.simpleButton12);
             this.layoutControl1.Controls.Add(this.simpleButton9);
             this.layoutControl1.Controls.Add(this.simpleButton10);
             this.layoutControl1.Controls.Add(this.simpleButton7);
@@ -96,14 +104,40 @@ namespace DirectoryManager2
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // simpleButton9
+            // 
+            this.simpleButton9.Appearance.BackColor = System.Drawing.Color.Crimson;
+            this.simpleButton9.Appearance.Options.UseBackColor = true;
+            this.simpleButton9.Enabled = false;
+            this.simpleButton9.Location = new System.Drawing.Point(755, 400);
+            this.simpleButton9.Name = "simpleButton9";
+            this.simpleButton9.Size = new System.Drawing.Size(215, 22);
+            this.simpleButton9.StyleController = this.layoutControl1;
+            this.simpleButton9.TabIndex = 16;
+            this.simpleButton9.Text = "Winzige Ordner löschen";
+            this.simpleButton9.Click += new System.EventHandler(this.simpleButton9_Click);
+            // 
+            // simpleButton10
+            // 
+            this.simpleButton10.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.simpleButton10.Appearance.Options.UseBackColor = true;
+            this.simpleButton10.Enabled = false;
+            this.simpleButton10.Location = new System.Drawing.Point(755, 374);
+            this.simpleButton10.Name = "simpleButton10";
+            this.simpleButton10.Size = new System.Drawing.Size(215, 22);
+            this.simpleButton10.StyleController = this.layoutControl1;
+            this.simpleButton10.TabIndex = 15;
+            this.simpleButton10.Text = "Winzige Ordner anzeigen";
+            this.simpleButton10.Click += new System.EventHandler(this.simpleButton10_Click);
+            // 
             // simpleButton7
             // 
             this.simpleButton7.Appearance.BackColor = System.Drawing.Color.Crimson;
             this.simpleButton7.Appearance.Options.UseBackColor = true;
             this.simpleButton7.Enabled = false;
-            this.simpleButton7.Location = new System.Drawing.Point(675, 400);
+            this.simpleButton7.Location = new System.Drawing.Point(500, 400);
             this.simpleButton7.Name = "simpleButton7";
-            this.simpleButton7.Size = new System.Drawing.Size(269, 22);
+            this.simpleButton7.Size = new System.Drawing.Size(251, 22);
             this.simpleButton7.StyleController = this.layoutControl1;
             this.simpleButton7.TabIndex = 14;
             this.simpleButton7.Text = "Winzige Dateien löschen";
@@ -114,9 +148,9 @@ namespace DirectoryManager2
             this.simpleButton8.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.simpleButton8.Appearance.Options.UseBackColor = true;
             this.simpleButton8.Enabled = false;
-            this.simpleButton8.Location = new System.Drawing.Point(675, 374);
+            this.simpleButton8.Location = new System.Drawing.Point(500, 374);
             this.simpleButton8.Name = "simpleButton8";
-            this.simpleButton8.Size = new System.Drawing.Size(269, 22);
+            this.simpleButton8.Size = new System.Drawing.Size(251, 22);
             this.simpleButton8.StyleController = this.layoutControl1;
             this.simpleButton8.TabIndex = 13;
             this.simpleButton8.Text = "Winzige Dateien anzeigen";
@@ -141,9 +175,9 @@ namespace DirectoryManager2
             this.simpleButton5.Appearance.BackColor = System.Drawing.Color.Crimson;
             this.simpleButton5.Appearance.Options.UseBackColor = true;
             this.simpleButton5.Enabled = false;
-            this.simpleButton5.Location = new System.Drawing.Point(350, 400);
+            this.simpleButton5.Location = new System.Drawing.Point(259, 400);
             this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(321, 22);
+            this.simpleButton5.Size = new System.Drawing.Size(237, 22);
             this.simpleButton5.StyleController = this.layoutControl1;
             this.simpleButton5.TabIndex = 11;
             this.simpleButton5.Text = "Leere Ordner löschen";
@@ -156,7 +190,7 @@ namespace DirectoryManager2
             this.simpleButton4.Enabled = false;
             this.simpleButton4.Location = new System.Drawing.Point(12, 400);
             this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(334, 22);
+            this.simpleButton4.Size = new System.Drawing.Size(243, 22);
             this.simpleButton4.StyleController = this.layoutControl1;
             this.simpleButton4.TabIndex = 10;
             this.simpleButton4.Text = "Falsche Dateitypen löschen";
@@ -167,9 +201,9 @@ namespace DirectoryManager2
             this.simpleButton3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.simpleButton3.Appearance.Options.UseBackColor = true;
             this.simpleButton3.Enabled = false;
-            this.simpleButton3.Location = new System.Drawing.Point(350, 374);
+            this.simpleButton3.Location = new System.Drawing.Point(259, 374);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(321, 22);
+            this.simpleButton3.Size = new System.Drawing.Size(237, 22);
             this.simpleButton3.StyleController = this.layoutControl1;
             this.simpleButton3.TabIndex = 9;
             this.simpleButton3.Text = "Leere Ordner anzeigen";
@@ -190,7 +224,7 @@ namespace DirectoryManager2
             this.simpleButton2.Enabled = false;
             this.simpleButton2.Location = new System.Drawing.Point(12, 374);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(334, 22);
+            this.simpleButton2.Size = new System.Drawing.Size(243, 22);
             this.simpleButton2.StyleController = this.layoutControl1;
             this.simpleButton2.TabIndex = 7;
             this.simpleButton2.Text = "Falsche Dateitypen anzeigen";
@@ -200,9 +234,9 @@ namespace DirectoryManager2
             // 
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Location = new System.Drawing.Point(880, 12);
+            this.simpleButton1.Location = new System.Drawing.Point(878, 12);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(332, 22);
+            this.simpleButton1.Size = new System.Drawing.Size(334, 22);
             this.simpleButton1.StyleController = this.layoutControl1;
             this.simpleButton1.TabIndex = 5;
             this.simpleButton1.Text = "Wählen...";
@@ -212,7 +246,7 @@ namespace DirectoryManager2
             // 
             this.textEdit1.Location = new System.Drawing.Point(81, 12);
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(795, 20);
+            this.textEdit1.Size = new System.Drawing.Size(793, 20);
             this.textEdit1.StyleController = this.layoutControl1;
             this.textEdit1.TabIndex = 4;
             // 
@@ -232,7 +266,9 @@ namespace DirectoryManager2
             this.layoutControlItem9,
             this.layoutControlItem10,
             this.layoutControlItem12,
-            this.layoutControlItem11});
+            this.layoutControlItem11,
+            this.layoutControlItem14,
+            this.layoutControlItem13});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1224, 434);
             this.Root.TextVisible = false;
@@ -242,16 +278,16 @@ namespace DirectoryManager2
             this.layoutControlItem1.Control = this.textEdit1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(868, 26);
+            this.layoutControlItem1.Size = new System.Drawing.Size(866, 26);
             this.layoutControlItem1.Text = "Verzeichnis:";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(57, 13);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.simpleButton1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(868, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(866, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(336, 26);
+            this.layoutControlItem2.Size = new System.Drawing.Size(338, 26);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -260,7 +296,7 @@ namespace DirectoryManager2
             this.layoutControlItem4.Control = this.simpleButton2;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 362);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(338, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(247, 26);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -276,18 +312,18 @@ namespace DirectoryManager2
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.simpleButton3;
-            this.layoutControlItem5.Location = new System.Drawing.Point(338, 362);
+            this.layoutControlItem5.Location = new System.Drawing.Point(247, 362);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(325, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(241, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.simpleButton5;
-            this.layoutControlItem7.Location = new System.Drawing.Point(338, 388);
+            this.layoutControlItem7.Location = new System.Drawing.Point(247, 388);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(325, 26);
+            this.layoutControlItem7.Size = new System.Drawing.Size(241, 26);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -296,7 +332,7 @@ namespace DirectoryManager2
             this.layoutControlItem6.Control = this.simpleButton4;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 388);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(338, 26);
+            this.layoutControlItem6.Size = new System.Drawing.Size(247, 26);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
@@ -312,64 +348,82 @@ namespace DirectoryManager2
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.simpleButton7;
-            this.layoutControlItem9.Location = new System.Drawing.Point(663, 388);
+            this.layoutControlItem9.Location = new System.Drawing.Point(488, 388);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(273, 26);
+            this.layoutControlItem9.Size = new System.Drawing.Size(255, 26);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.simpleButton8;
-            this.layoutControlItem10.Location = new System.Drawing.Point(663, 362);
+            this.layoutControlItem10.Location = new System.Drawing.Point(488, 362);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(273, 26);
+            this.layoutControlItem10.Size = new System.Drawing.Size(255, 26);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
-            // 
-            // simpleButton9
-            // 
-            this.simpleButton9.Appearance.BackColor = System.Drawing.Color.Crimson;
-            this.simpleButton9.Appearance.Options.UseBackColor = true;
-            this.simpleButton9.Enabled = false;
-            this.simpleButton9.Location = new System.Drawing.Point(948, 400);
-            this.simpleButton9.Name = "simpleButton9";
-            this.simpleButton9.Size = new System.Drawing.Size(264, 22);
-            this.simpleButton9.StyleController = this.layoutControl1;
-            this.simpleButton9.TabIndex = 16;
-            this.simpleButton9.Text = "Winzige Ordner löschen";
-            this.simpleButton9.Click += new System.EventHandler(this.simpleButton9_Click);
-            // 
-            // simpleButton10
-            // 
-            this.simpleButton10.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.simpleButton10.Appearance.Options.UseBackColor = true;
-            this.simpleButton10.Enabled = false;
-            this.simpleButton10.Location = new System.Drawing.Point(948, 374);
-            this.simpleButton10.Name = "simpleButton10";
-            this.simpleButton10.Size = new System.Drawing.Size(264, 22);
-            this.simpleButton10.StyleController = this.layoutControl1;
-            this.simpleButton10.TabIndex = 15;
-            this.simpleButton10.Text = "Winzige Ordner anzeigen";
-            this.simpleButton10.Click += new System.EventHandler(this.simpleButton10_Click);
-            // 
-            // layoutControlItem11
-            // 
-            this.layoutControlItem11.Control = this.simpleButton9;
-            this.layoutControlItem11.Location = new System.Drawing.Point(936, 388);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(268, 26);
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem11.TextVisible = false;
             // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.simpleButton10;
-            this.layoutControlItem12.Location = new System.Drawing.Point(936, 362);
+            this.layoutControlItem12.Location = new System.Drawing.Point(743, 362);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(268, 26);
+            this.layoutControlItem12.Size = new System.Drawing.Size(219, 26);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.simpleButton9;
+            this.layoutControlItem11.Location = new System.Drawing.Point(743, 388);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(219, 26);
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem11.TextVisible = false;
+            // 
+            // simpleButton11
+            // 
+            this.simpleButton11.Appearance.BackColor = System.Drawing.Color.Crimson;
+            this.simpleButton11.Appearance.Options.UseBackColor = true;
+            this.simpleButton11.Enabled = false;
+            this.simpleButton11.Location = new System.Drawing.Point(974, 400);
+            this.simpleButton11.Name = "simpleButton11";
+            this.simpleButton11.Size = new System.Drawing.Size(238, 22);
+            this.simpleButton11.StyleController = this.layoutControl1;
+            this.simpleButton11.TabIndex = 18;
+            this.simpleButton11.Text = "Doppelte Dateien löschen";
+            this.simpleButton11.Click += new System.EventHandler(this.simpleButton11_Click);
+            // 
+            // simpleButton12
+            // 
+            this.simpleButton12.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.simpleButton12.Appearance.Options.UseBackColor = true;
+            this.simpleButton12.Enabled = false;
+            this.simpleButton12.Location = new System.Drawing.Point(974, 374);
+            this.simpleButton12.Name = "simpleButton12";
+            this.simpleButton12.Size = new System.Drawing.Size(238, 22);
+            this.simpleButton12.StyleController = this.layoutControl1;
+            this.simpleButton12.TabIndex = 17;
+            this.simpleButton12.Text = "Doppelte Dateien anzeigen";
+            this.simpleButton12.Click += new System.EventHandler(this.simpleButton12_Click);
+            // 
+            // layoutControlItem13
+            // 
+            this.layoutControlItem13.Control = this.simpleButton11;
+            this.layoutControlItem13.Location = new System.Drawing.Point(962, 388);
+            this.layoutControlItem13.Name = "layoutControlItem13";
+            this.layoutControlItem13.Size = new System.Drawing.Size(242, 26);
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem13.TextVisible = false;
+            // 
+            // layoutControlItem14
+            // 
+            this.layoutControlItem14.Control = this.simpleButton12;
+            this.layoutControlItem14.Location = new System.Drawing.Point(962, 362);
+            this.layoutControlItem14.Name = "layoutControlItem14";
+            this.layoutControlItem14.Size = new System.Drawing.Size(242, 26);
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem14.TextVisible = false;
             // 
             // CheckCollection
             // 
@@ -393,8 +447,10 @@ namespace DirectoryManager2
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -427,5 +483,9 @@ namespace DirectoryManager2
         private DevExpress.XtraEditors.SimpleButton simpleButton10;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
+        private DevExpress.XtraEditors.SimpleButton simpleButton11;
+        private DevExpress.XtraEditors.SimpleButton simpleButton12;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
     }
 }

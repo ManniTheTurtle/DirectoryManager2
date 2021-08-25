@@ -17,6 +17,7 @@ namespace DirectoryManager2
 {
     public partial class CheckCollection : DevExpress.XtraEditors.XtraUserControl
     {
+        List<FileInfo> allFiles_List;
         List<DirectoryInfo> tinyfolders_List;
         DirectoryInfo main_directoryinfo;
         List<DirectoryInfo> hoerbuecher_List;
@@ -51,6 +52,7 @@ namespace DirectoryManager2
 
             dm2_main.UseWaitForm(false);
 
+            allFiles_List = new List<FileInfo>();
             tinyfolders_List = new List<DirectoryInfo>();
             smallFiles_List = new List<FileInfo>();
             hoerbuecher_List = new List<DirectoryInfo>();
@@ -72,10 +74,13 @@ namespace DirectoryManager2
                 return;
             }
 
-            // Hörbücher auflisten:
+            // Hörbücher Verzeichnisse auflisten:
             hoerbuecher_List = main_directoryinfo.GetDirectories().ToList();
             listBoxControl1.Items.Add("Anzahl Einträge: " + hoerbuecher_List.Count());
 
+            // Alle Dateien auflisten:
+            allFiles_List.AddRange(hoerbuecher_List.SelectMany(x => x.GetFiles("*", SearchOption.AllDirectories)).ToList());
+            listBoxControl1.Items.Add("Anzahl Dateien: " + allFiles_List.Count());
 
             FalscheDateitypenFinden();
 
@@ -85,8 +90,52 @@ namespace DirectoryManager2
 
             SehrkleineOrdnerfinden();
 
+            DoppelteDateienFinden();
+
             dm2_main.UseWaitForm(true);
         }
+
+        
+        Dictionary<FileInfo, FileInfo> equalFiles_Dict = new Dictionary<FileInfo, FileInfo>();
+        public void DoppelteDateienFinden()
+        {
+            while (allFiles_List.Count > 1)
+            {
+                NextFile:
+                FileInfo file = allFiles_List[0];
+                allFiles_List.Remove(file);
+
+                foreach (var item in allFiles_List)
+                {
+                    if (item.Length == file.Length)
+                    {
+                        byte[] file1 = File.ReadAllBytes(item.FullName);
+                        byte[] file2 = File.ReadAllBytes(file.FullName);
+
+                        for (int i = 0; i < file1.Length; i++)
+                        {
+                            if (file1[i] != file2[i])
+                            {
+                                goto NextFile;
+                            }
+                        }
+
+                        if (!equalFiles_Dict.ContainsKey(item) && !equalFiles_Dict.ContainsKey(file))
+                        {
+                            equalFiles_Dict.Add(item, file);
+                        }
+                    }
+                }
+            }
+
+            listBoxControl1.Items.Add("Doppelte Dateien: " + equalFiles_Dict.Count());
+
+            if (equalFiles_Dict.Count > 0)
+            {
+                simpleButton12.Enabled = true;
+            }
+        }
+
 
         public void SehrKleineDateienFinden()
         {
@@ -104,19 +153,15 @@ namespace DirectoryManager2
         }
 
         
-        public async Task SehrkleineOrdnerfinden()
+        public void SehrkleineOrdnerfinden()
         {
             foreach (var item in hoerbuecher_List)
             {
-                // wie wirkt sich die asynchrone Methode auf das WaitForm aus??
-                await Task.Run(() =>
+                long dirSize = item.EnumerateFiles("*", SearchOption.AllDirectories).Sum(file => file.Length);
+                if (dirSize < 10000000)
                 {
-                    long dirSize = item.EnumerateFiles("*", SearchOption.AllDirectories).Sum(file => file.Length);
-                    if (dirSize < 10000000)
-                    {
-                        tinyfolders_List.Add(item);
-                    }
-                });
+                    tinyfolders_List.Add(item);
+                }
             }
 
             listBoxControl1.Items.Add("Ordner unter 10 MB: " + tinyfolders_List.Count());
@@ -243,6 +288,19 @@ namespace DirectoryManager2
 
             simpleButton9.Enabled = false;
             simpleButton10.Enabled = false;
+        }
+
+        private void simpleButton12_Click(object sender, EventArgs e)   // Doppelte Dateien anzeigen Button
+        {
+            listBoxControl1.DataSource = equalFiles_Dict;
+
+            simpleButton11.Enabled = true;
+        }
+
+        private void simpleButton11_Click(object sender, EventArgs e)   // Doppelte Dateien löschen Button
+        {
+            simpleButton11.Enabled = false;
+            simpleButton12.Enabled = false;
         }
     }
 }
