@@ -14,22 +14,22 @@ namespace DirectoryManager2
 {
     public partial class DeleteFolders : DevExpress.XtraEditors.XtraUserControl
     {
-        public bool maindirectoryexists;
-        public bool secondarydirectoryexists;
-        public DeleteFolderStats deletefolderstats;
-        IEnumerable<string> maindirectoryfolders_IEnum;
-        IEnumerable<string> secondarydirectoryfolders_IEnum;
+        // leider in diesem UserControl stringlisten verwendet statt DirectoryInfo und FileInfo Klassen
         List<string> maindirectoryfolders_List = new List<string>();
         List<string> secondarydirectoryfolders_List = new List<string>();
         List<string> DeletedFoldersCheckList = new List<string>();
+        public bool maindirectoryexists;
+        public bool secondarydirectoryexists;
+        IEnumerable<string> maindirectoryfolders_IEnum;
+        IEnumerable<string> secondarydirectoryfolders_IEnum;
+        public int FoldersInMainCollection;
+        public int FoldersToDelete;
+        public int EquivaltentFoldersFound;
 
         public DeleteFolders()
         {
             InitializeComponent();
 
-            // Testing Presets:
-            textEdit_maindirectorypath.Text = @"C:\Users\Hackm\Desktop\DirectoryManager Testing\MyCollection";
-            textEdit_secondarydirectorypath.Text = @"C:\Users\Hackm\Desktop\DirectoryManager Testing\StuffToDelete";
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)    // Hauptverzeichnis wählen
@@ -58,10 +58,10 @@ namespace DirectoryManager2
             }
         }
 
-
         private void simpleButton4_Click(object sender, EventArgs e)    // Check Chosen Directories
         {
-            deletefolderstats = new DeleteFolderStats();
+            listBoxControl1.Items.Clear();
+            EquivaltentFoldersFound = 0;
 
             if (Directory.Exists(textEdit_maindirectorypath.Text))
             {
@@ -82,8 +82,8 @@ namespace DirectoryManager2
             secondarydirectoryfolders_IEnum = Directory.EnumerateDirectories(textEdit_secondarydirectorypath.Text);
 
             // Zähle Ordner
-            deletefolderstats.FoldersInMainCollection = maindirectoryfolders_IEnum.Count();
-            deletefolderstats.FoldersToDelete = secondarydirectoryfolders_IEnum.Count();
+            FoldersInMainCollection = maindirectoryfolders_IEnum.Count();
+            FoldersToDelete = secondarydirectoryfolders_IEnum.Count();
 
             // Zähle übereinstimmende Verzeichnisse
             maindirectoryfolders_List = new List<string>();
@@ -104,28 +104,20 @@ namespace DirectoryManager2
             {
                 if (maindirectoryfolders_List.Contains(item))
                 {
-                    deletefolderstats.EquivaltentFoldersFound++;
+                    EquivaltentFoldersFound++;
                 }
-                else // Nicht gefundene Dateien anzeigen:
+                else
                 {
-                    if (labelControl2.Visible == false || labelControl2.Enabled == false)
-                    {
-                        labelControl2.Visible = true;
-                        labelControl2.Enabled = true;
-                        labelControl2.Text = "In Sammlung nicht vorhandene Ordner:" + Environment.NewLine;
-                    }
-                    labelControl2.Text += item + Environment.NewLine;
+
                 }
             }
 
-            // Zeige Werte im PropertyGrid an
-            propertyGridControl1.SelectedObject = deletefolderstats;
-            propertyGridControl1.Visible = true;
-            propertyGridControl1.Enabled = true;
-
+            listBoxControl1.Items.Add("Alle Einträge in Sammlung: " + FoldersInMainCollection);
+            listBoxControl1.Items.Add("Einträge zu löschen: " + FoldersToDelete);
+            listBoxControl1.Items.Add("Löschbare Einträge in Sammlung gefunden: " + EquivaltentFoldersFound);
 
             // Schalte "Bereinigen" Button frei
-            if (deletefolderstats.EquivaltentFoldersFound > 0)
+            if (EquivaltentFoldersFound > 0)
             {
                 simpleButtonBereinigen.Enabled = true;
             }
@@ -133,6 +125,8 @@ namespace DirectoryManager2
 
         private void simpleButtonBereinigen_Click(object sender, EventArgs e)   // lösche übereinstimmende Ordner in Sammlung
         {
+            listBoxControl1.Items.Clear();
+
             if (maindirectoryfolders_IEnum == null || maindirectoryfolders_IEnum.Count() == 0 || secondarydirectoryfolders_List == null || secondarydirectoryfolders_List.Count == 0)
             {
                 return;
@@ -146,7 +140,7 @@ namespace DirectoryManager2
 
                     if (match != null)
                     {
-                        Directory.Delete(match);
+                        Directory.Delete(match, true);
                         DeletedFoldersCheckList.Add(match);
                     }
                 }
@@ -159,17 +153,11 @@ namespace DirectoryManager2
                 if (!Directory.Exists(item))
                 {
                     counter++;
-                    labelControl3.Text += item + " wurde gelöscht" + Environment.NewLine;
-                }
-
-                labelControl2.Text = counter.ToString() + " Verzeichnisse wurden gelöscht";
-
-                if (deletefolderstats.EquivaltentFoldersFound == counter)
-                {
-                    labelControl2.ForeColor = Color.DarkGreen;
-                    labelControl2.Text += " (Alle)";
                 }
             }
+
+            listBoxControl1.Items.Add(counter.ToString() + " Verzeichnisse wurden gelöscht");
+            simpleButtonBereinigen.Enabled = false;
         }
     }
 }

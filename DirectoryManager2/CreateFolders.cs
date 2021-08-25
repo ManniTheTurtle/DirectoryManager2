@@ -60,7 +60,15 @@ namespace DirectoryManager2
 
             listBoxControl2.Items.Add("AudioFiles: " + fileinfoList.Count());
 
-            simpleButton2.Enabled = true;
+            if (fileinfoList.Count() > 0)
+            {
+                simpleButton2.Enabled = true;
+            }
+
+            if (maindirectoryinfo.GetDirectories().Length > 0)
+            {
+                simpleButton3.Enabled = true;
+            }
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)    // Create Folders from Filenames

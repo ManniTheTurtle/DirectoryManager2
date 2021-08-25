@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace DirectoryManager2
 {
-    public partial class DM2_Main : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class DM2_Main : DevExpress.XtraBars.Ribbon.RibbonForm, IObserver
     {
 
         List<LayoutControlItem> usercontrols_List = new List<LayoutControlItem>();
@@ -17,7 +17,6 @@ namespace DirectoryManager2
         public DM2_Main()
         {
             InitializeComponent();
-
             this.Size = new Size(800, 600);
 
             foreach (var item in this.layoutControl1.Items)
@@ -61,5 +60,22 @@ namespace DirectoryManager2
 
             layoutControlItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
         }
+
+        public void UseWaitForm(bool waitformstatus)
+        {
+            if (waitformstatus)
+            {
+                this.splashScreenManager2.CloseWaitForm();
+            }
+            else
+            {
+                this.splashScreenManager2.ShowWaitForm();
+            }
+        }
+    }
+
+    public interface IObserver
+    {
+        void UseWaitForm(bool waitformstatus);
     }
 }

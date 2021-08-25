@@ -44,6 +44,7 @@ namespace DirectoryManager2
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.splashScreenManager2 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DirectoryManager2.DM2_WaitForm), true, true);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -125,21 +126,21 @@ namespace DirectoryManager2
             // 
             // checkCollection1
             // 
-            this.checkCollection1.Location = new System.Drawing.Point(12, 359);
+            this.checkCollection1.Location = new System.Drawing.Point(12, 240);
             this.checkCollection1.Name = "checkCollection1";
-            this.checkCollection1.Size = new System.Drawing.Size(954, 96);
+            this.checkCollection1.Size = new System.Drawing.Size(954, 130);
             this.checkCollection1.TabIndex = 6;
             // 
             // createFolders1
             // 
-            this.createFolders1.Location = new System.Drawing.Point(12, 225);
+            this.createFolders1.Location = new System.Drawing.Point(12, 106);
             this.createFolders1.Name = "createFolders1";
             this.createFolders1.Size = new System.Drawing.Size(954, 130);
             this.createFolders1.TabIndex = 5;
             // 
             // deleteFolders1
             // 
-            this.deleteFolders1.Location = new System.Drawing.Point(12, 12);
+            this.deleteFolders1.Location = new System.Drawing.Point(12, -107);
             this.deleteFolders1.Name = "deleteFolders1";
             this.deleteFolders1.Size = new System.Drawing.Size(954, 209);
             this.deleteFolders1.TabIndex = 4;
@@ -153,7 +154,7 @@ namespace DirectoryManager2
             this.layoutControlItem2,
             this.layoutControlItem3});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(978, 467);
+            this.Root.Size = new System.Drawing.Size(978, 501);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -181,10 +182,14 @@ namespace DirectoryManager2
             this.layoutControlItem3.Control = this.checkCollection1;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 347);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(958, 100);
+            this.layoutControlItem3.Size = new System.Drawing.Size(958, 134);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             this.layoutControlItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            // 
+            // splashScreenManager2
+            // 
+            this.splashScreenManager2.ClosingDelay = 500;
             // 
             // DM2_Main
             // 
@@ -224,6 +229,7 @@ namespace DirectoryManager2
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private CheckCollection checkCollection1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager2;
     }
 }
 
