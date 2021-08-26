@@ -110,3 +110,8 @@ U:\Repositiories\DirectoryManager2\DirectoryManager2\bin\Debug\ru\DevExpress.Xtr
 U:\Repositiories\DirectoryManager2\DirectoryManager2\obj\Debug\DirectoryManager2.CreateFolders.resources
 U:\Repositiories\DirectoryManager2\DirectoryManager2\obj\Debug\DirectoryManager2.CheckCollection.resources
 U:\Repositiories\DirectoryManager2\DirectoryManager2\obj\Debug\DirectoryManager2.DM2_WaitForm.resources
+U:\Repositiories\DirectoryManager2\DirectoryManager2\obj\Debug\DirectoryManager2.HarmonizeCollections.resources
+U:\Repositiories\DirectoryManager2\DirectoryManager2\obj\Debug\DirectoryManager2.SettingsGrid.resources
+U:\Repositiories\Debug\DirectoryManager2.exe.config
+U:\Repositiories\Debug\DirectoryManager2.exe
+U:\Repositiories\Debug\DirectoryManager2.pdb

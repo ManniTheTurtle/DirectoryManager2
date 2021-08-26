@@ -98,7 +98,7 @@ namespace DirectoryManager2
             this.simpleButton4.Appearance.Options.UseFont = true;
             this.simpleButton4.Location = new System.Drawing.Point(12, 38);
             this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(667, 24);
+            this.simpleButton4.Size = new System.Drawing.Size(600, 24);
             this.simpleButton4.StyleController = this.layoutControl1;
             this.simpleButton4.TabIndex = 13;
             this.simpleButton4.Text = "Check!";
@@ -109,7 +109,7 @@ namespace DirectoryManager2
             this.checkEdit2.Location = new System.Drawing.Point(174, 66);
             this.checkEdit2.Name = "checkEdit2";
             this.checkEdit2.Properties.Caption = "+ \"[Lesung]\"";
-            this.checkEdit2.Size = new System.Drawing.Size(505, 20);
+            this.checkEdit2.Size = new System.Drawing.Size(438, 20);
             this.checkEdit2.StyleController = this.layoutControl1;
             this.checkEdit2.TabIndex = 12;
             this.checkEdit2.CheckedChanged += new System.EventHandler(this.checkEdit2_CheckedChanged);
@@ -131,9 +131,9 @@ namespace DirectoryManager2
             this.simpleButton3.Appearance.Options.UseBackColor = true;
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.Enabled = false;
-            this.simpleButton3.Location = new System.Drawing.Point(683, 90);
+            this.simpleButton3.Location = new System.Drawing.Point(616, 90);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(545, 24);
+            this.simpleButton3.Size = new System.Drawing.Size(612, 24);
             this.simpleButton3.StyleController = this.layoutControl1;
             this.simpleButton3.TabIndex = 10;
             this.simpleButton3.Text = "Ordnernamen bereinigen";
@@ -148,7 +148,7 @@ namespace DirectoryManager2
             this.simpleButton2.Enabled = false;
             this.simpleButton2.Location = new System.Drawing.Point(12, 90);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(667, 24);
+            this.simpleButton2.Size = new System.Drawing.Size(600, 24);
             this.simpleButton2.StyleController = this.layoutControl1;
             this.simpleButton2.TabIndex = 9;
             this.simpleButton2.Text = "Ordner erzeugen";
@@ -158,15 +158,15 @@ namespace DirectoryManager2
             // 
             this.listBoxControl2.Location = new System.Drawing.Point(12, 118);
             this.listBoxControl2.Name = "listBoxControl2";
-            this.listBoxControl2.Size = new System.Drawing.Size(667, 395);
+            this.listBoxControl2.Size = new System.Drawing.Size(600, 395);
             this.listBoxControl2.StyleController = this.layoutControl1;
             this.listBoxControl2.TabIndex = 7;
             // 
             // listBoxControl1
             // 
-            this.listBoxControl1.Location = new System.Drawing.Point(683, 118);
+            this.listBoxControl1.Location = new System.Drawing.Point(616, 118);
             this.listBoxControl1.Name = "listBoxControl1";
-            this.listBoxControl1.Size = new System.Drawing.Size(545, 395);
+            this.listBoxControl1.Size = new System.Drawing.Size(612, 395);
             this.listBoxControl1.StyleController = this.layoutControl1;
             this.listBoxControl1.TabIndex = 6;
             // 
@@ -232,9 +232,9 @@ namespace DirectoryManager2
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.listBoxControl1;
-            this.layoutControlItem3.Location = new System.Drawing.Point(671, 106);
+            this.layoutControlItem3.Location = new System.Drawing.Point(604, 106);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(549, 399);
+            this.layoutControlItem3.Size = new System.Drawing.Size(616, 399);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -243,7 +243,7 @@ namespace DirectoryManager2
             this.layoutControlItem4.Control = this.listBoxControl2;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 106);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(671, 399);
+            this.layoutControlItem4.Size = new System.Drawing.Size(604, 399);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -252,16 +252,16 @@ namespace DirectoryManager2
             this.layoutControlItem6.Control = this.simpleButton2;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 78);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(671, 28);
+            this.layoutControlItem6.Size = new System.Drawing.Size(604, 28);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.simpleButton3;
-            this.layoutControlItem7.Location = new System.Drawing.Point(671, 78);
+            this.layoutControlItem7.Location = new System.Drawing.Point(604, 78);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(549, 28);
+            this.layoutControlItem7.Size = new System.Drawing.Size(616, 28);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -279,16 +279,16 @@ namespace DirectoryManager2
             this.layoutControlItem9.Control = this.checkEdit2;
             this.layoutControlItem9.Location = new System.Drawing.Point(162, 54);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(509, 24);
+            this.layoutControlItem9.Size = new System.Drawing.Size(442, 24);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(671, 26);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(604, 26);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(549, 52);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(616, 52);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem10
@@ -296,7 +296,7 @@ namespace DirectoryManager2
             this.layoutControlItem10.Control = this.simpleButton4;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(671, 28);
+            this.layoutControlItem10.Size = new System.Drawing.Size(604, 28);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 

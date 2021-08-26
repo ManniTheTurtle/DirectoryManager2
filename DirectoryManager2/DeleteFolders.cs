@@ -18,8 +18,6 @@ namespace DirectoryManager2
         List<string> maindirectoryfolders_List = new List<string>();
         List<string> secondarydirectoryfolders_List = new List<string>();
         List<string> DeletedFoldersCheckList = new List<string>();
-        public bool maindirectoryexists;
-        public bool secondarydirectoryexists;
         IEnumerable<string> maindirectoryfolders_IEnum;
         IEnumerable<string> secondarydirectoryfolders_IEnum;
         public int FoldersInMainCollection;
@@ -63,16 +61,7 @@ namespace DirectoryManager2
             listBoxControl1.Items.Clear();
             EquivaltentFoldersFound = 0;
 
-            if (Directory.Exists(textEdit_maindirectorypath.Text))
-            {
-                maindirectoryexists = true;
-            }
-            if (Directory.Exists(textEdit_secondarydirectorypath.Text))
-            {
-                secondarydirectoryexists = true;
-            }
-
-            if (maindirectoryexists != true || secondarydirectoryexists != true || textEdit_maindirectorypath.Text == textEdit_secondarydirectorypath.Text)
+            if (!Directory.Exists(textEdit_maindirectorypath.Text) || !Directory.Exists(textEdit_secondarydirectorypath.Text) || textEdit_maindirectorypath.Text == textEdit_secondarydirectorypath.Text)
             {
                 return;
             }

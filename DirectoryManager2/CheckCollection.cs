@@ -17,6 +17,7 @@ namespace DirectoryManager2
 {
     public partial class CheckCollection : DevExpress.XtraEditors.XtraUserControl
     {
+        Dictionary<FileInfo, FileInfo> equalFiles_Dict;
         List<FileInfo> allFiles_List;
         List<DirectoryInfo> tinyfolders_List;
         DirectoryInfo main_directoryinfo;
@@ -52,6 +53,7 @@ namespace DirectoryManager2
 
             dm2_main.UseWaitForm(false);
 
+            equalFiles_Dict = new Dictionary<FileInfo, FileInfo>();
             allFiles_List = new List<FileInfo>();
             tinyfolders_List = new List<DirectoryInfo>();
             smallFiles_List = new List<FileInfo>();
@@ -90,14 +92,13 @@ namespace DirectoryManager2
 
             SehrkleineOrdnerfinden();
 
-            DoppelteDateienFinden();
+            //DoppelteDateienFinden();
 
             dm2_main.UseWaitForm(true);
         }
 
         
-        Dictionary<FileInfo, FileInfo> equalFiles_Dict = new Dictionary<FileInfo, FileInfo>();
-        public void DoppelteDateienFinden()
+        public void DoppelteDateienFinden() // byte arrays sind nie identisch, auch nicht bei Kopien. vorerst deaktiviert.
         {
             while (allFiles_List.Count > 1)
             {
@@ -142,9 +143,10 @@ namespace DirectoryManager2
             foreach (var item in hoerbuecher_List)
             {
                 smallFiles_List.AddRange(item.GetFiles("*", SearchOption.AllDirectories)
-                    .Where(x => x.Length < 100000));
+                    .Where(x => x.Length < MySettings.Instance().minimumfilesize));
             }
-            listBoxControl1.Items.Add("Dateien unter 100 KB: " + smallFiles_List.Count());
+            var minfilesize = MySettings.Instance().minimumfilesize / 1000;
+            listBoxControl1.Items.Add($"Dateien unter {minfilesize} KB: " + smallFiles_List.Count());
 
             if (smallFiles_List.Count > 0)
             {
@@ -158,13 +160,13 @@ namespace DirectoryManager2
             foreach (var item in hoerbuecher_List)
             {
                 long dirSize = item.EnumerateFiles("*", SearchOption.AllDirectories).Sum(file => file.Length);
-                if (dirSize < 10000000)
+                if (dirSize < MySettings.Instance().minimumfoldersize)
                 {
                     tinyfolders_List.Add(item);
                 }
             }
-
-            listBoxControl1.Items.Add("Ordner unter 10 MB: " + tinyfolders_List.Count());
+            var minfoldersize = MySettings.Instance().minimumfoldersize / 1000000;
+            listBoxControl1.Items.Add($"Ordner unter {minfoldersize} MB: " + tinyfolders_List.Count());
 
             if (tinyfolders_List.Count > 0)
             {
