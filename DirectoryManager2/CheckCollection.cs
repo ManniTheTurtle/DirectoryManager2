@@ -97,9 +97,33 @@ namespace DirectoryManager2
             dm2_main.UseWaitForm(true);
         }
 
-        
-        public void DoppelteDateienFinden() // byte arrays sind nie identisch, auch nicht bei Kopien. vorerst deaktiviert.
+        public void verschachtelteOrdnerfinden()
         {
+            foreach (var hoerbuch in hoerbuecher_List)
+            {
+                if (hoerbuch.EnumerateDirectories().Count() > 0)
+                {
+                    counter = 0;
+                    verzeichnisbaumRekursiv(hoerbuch);
+                }
+            }
+        }
+
+        public int counter;
+        public void verzeichnisbaumRekursiv(DirectoryInfo hoerbuch)
+        {
+            if (hoerbuch.EnumerateDirectories().Count() > 0)
+            {
+                counter++;
+                foreach (var item in hoerbuch.EnumerateDirectories())
+                {
+                    verzeichnisbaumRekursiv(item);
+                }
+            }
+        }
+        
+        public void DoppelteDateienFinden() // die byte arrays sind leider nie identisch, auch nicht bei direkten Kopien. --> vorerst deaktiviert.
+        { 
             while (allFiles_List.Count > 1)
             {
                 NextFile:

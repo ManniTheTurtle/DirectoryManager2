@@ -1,9 +1,11 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.ComponentModel;
 using System.IO;
 
 namespace DirectoryManager2
 {
+    [Serializable]
     public class MySettings
     {
         public static MySettings _instance;

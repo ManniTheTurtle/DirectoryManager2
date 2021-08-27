@@ -16,8 +16,6 @@ namespace DirectoryManager2
         public SettingsGrid()
         {
             InitializeComponent();
-
-            propertyGridControl1.SelectedObject = MySettings.Instance();
         }
     }
 }

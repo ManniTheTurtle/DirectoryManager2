@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraLayout;
+using DevExpress.XtraVerticalGrid;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Data;
@@ -37,6 +38,22 @@ namespace DirectoryManager2
             {
                 string jsonstring = File.ReadAllText(MySettings.Instance().path);
                 MySettings._instance = JsonConvert.DeserializeObject<MySettings>(jsonstring);
+
+                //PropertyGrid updaten nachdem settings werte serialisiert wurden
+                foreach (var item in settingsGrid1.Controls)
+                {
+                    if (item is LayoutControl)
+                    {
+                        foreach (var pgc in (item as LayoutControl).Controls)
+                        {
+                            if (pgc is PropertyGridControl)
+                            {
+                                (pgc as PropertyGridControl).SelectedObject = null;
+                                (pgc as PropertyGridControl).SelectedObject = MySettings.Instance();
+                            }
+                        }
+                    }
+                }
             }
         }
 
