@@ -54,7 +54,44 @@ namespace DirectoryManager2
             }
         }
 
-        [Browsable(false)]
+        [Browsable(true)]
+        [ReadOnly(true)]
         public string path = "MySettings.json";
+
+        private int _subfolderLimit;
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Description("Meldeschwelle für die Tiefe der UnterordnerStruktur (Ebenen) (um tief verschachtelte Ordner zu finden)")]
+        [Category("Sammlung prüfen Settings:")]
+        [DisplayName("Meldung bei Ordnertiefe:")]
+        public int subfolderLimit
+        {
+            get
+            {
+                return _subfolderLimit;
+            }
+            set
+            {
+                _subfolderLimit = value;
+            }
+        }
+
+        private int _subfoldernamelength;
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Description("Meldeschwelle für zu lange Ordnernamen (Anzahl Zeichen)")]
+        [Category("Sammlung prüfen Settings:")]
+        [DisplayName("Meldung bei Ordnernamenlänge:")]
+        public int subfoldernamelength
+        {
+            get
+            {
+                return _subfoldernamelength;
+            }
+            set
+            {
+                _subfoldernamelength = value;
+            }
+        }
     }
 }

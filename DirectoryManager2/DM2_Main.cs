@@ -21,7 +21,7 @@ namespace DirectoryManager2
         {
             InitializeComponent();
 
-            this.Size = new Size(800, 600);
+            this.Size = new Size(1000, 600);
 
             foreach (var item in this.layoutControl1.Items)
             {
