@@ -110,7 +110,7 @@ namespace DirectoryManager2
 
             SehrkleineOrdnerfinden();
 
-            //DoppelteDateienFinden();
+            DoppelteDateienFinden();
 
             verschachtelteOrdnerfinden();
 
@@ -131,12 +131,6 @@ namespace DirectoryManager2
                     SchreibfehlerListe.Add(item.Name + " --> fehlt [Hörspiel]/[Lesung]");
                 }
 
-                
-                if (!Char.IsLetter(item.Name[0]) || !Char.IsUpper(item.Name[0]))
-                {
-                    SchreibfehlerListe.Add(item.Name + " --> falscher Anfang");
-                }
-
                 // prüfe nach Anfangsgroßbuchstaben
                 var uppertest = item.Name.Split('-')[0];
                 var uppertestArray = uppertest.Split(' ');
@@ -148,9 +142,8 @@ namespace DirectoryManager2
                     }
                 }
 
-
                 var nextuppertest = item.Name.Split('-').Last();
-                if (!Char.IsWhiteSpace(nextuppertest[0]) || (!Char.IsLetter(nextuppertest[1]) || !Char.IsDigit(nextuppertest[1])) || !Char.IsUpper(nextuppertest[1]))
+                if (!Char.IsWhiteSpace(nextuppertest[0]) && (!Char.IsLetter(nextuppertest[1]) && !Char.IsDigit(nextuppertest[1])) && !Char.IsUpper(nextuppertest[1]))
                 {
                     SchreibfehlerListe.Add(item.Name + " --> Fehler nach Bindestrich");
                 }
@@ -463,15 +456,13 @@ namespace DirectoryManager2
 
         private void simpleButton12_Click(object sender, EventArgs e)   // Doppelte Dateien anzeigen Button
         {
-            listBoxControl1.DataSource = equalFiles_Dict;
-
+            listBoxControl1.DataSource = null;
+            foreach (var item in equalFiles_Dict)
+            {
+                listBoxControl1.Items.Add(item.Key.FullName + " = " + item.Value.FullName);
+            }
+            
             simpleButton11.Enabled = true;
-        }
-
-        private void simpleButton11_Click(object sender, EventArgs e)   // Doppelte Dateien löschen Button
-        {
-            simpleButton11.Enabled = false;
-            simpleButton12.Enabled = false;
         }
 
         private void simpleButton14_Click(object sender, EventArgs e)   // Tiefe Ordner anzeigen
