@@ -106,11 +106,11 @@ namespace DirectoryManager2
 
             LeereUnterordnerfinden();
 
-            SehrKleineDateienFinden();
+            //SehrKleineDateienFinden();
 
             SehrkleineOrdnerfinden();
 
-            DoppelteDateienFinden();
+            //DoppelteDateienFinden();
 
             verschachtelteOrdnerfinden();
 
@@ -235,7 +235,7 @@ namespace DirectoryManager2
         { 
             while (allFiles_List.Count > 1)
             {
-                NextFile:
+                //NextFile:
                 FileInfo file = allFiles_List[0];
                 allFiles_List.Remove(file);
 

@@ -41,7 +41,7 @@ namespace DirectoryManager2
         [ReadOnly(false)]
         [Description("in Byte")]
         [Category("Sammlung prüfen Settings:")]
-        [DisplayName("Minimale Dateigröße:")]
+        [DisplayName("Minimale Ordnergröße:")]
         public int minimumfoldersize
         {
             get

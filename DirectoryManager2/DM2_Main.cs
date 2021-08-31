@@ -30,6 +30,12 @@ namespace DirectoryManager2
                     usercontrols_List.Add(item as LayoutControlItem);
                 }
             }
+
+            // alle LCIs auf invisible setzen
+            foreach (var item in usercontrols_List)
+            {
+                item.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            }
         }
 
         private void DM2_Main_Load(object sender, System.EventArgs e)
@@ -129,6 +135,17 @@ namespace DirectoryManager2
         {
             string jsonstring = JsonConvert.SerializeObject(MySettings.Instance(), Formatting.Indented);
             File.WriteAllText(MySettings.Instance().path, jsonstring);
+        }
+
+        // Ordner duplizieren
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (var item in usercontrols_List)
+            {
+                item.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            }
+
+            layoutControlItem6.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
         }
     }
 
