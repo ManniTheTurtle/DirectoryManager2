@@ -30,6 +30,7 @@ namespace DirectoryManager2
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.simpleButton21 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton19 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton20 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton17 = new DevExpress.XtraEditors.SimpleButton();
@@ -75,7 +76,6 @@ namespace DirectoryManager2
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButton21 = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -140,12 +140,24 @@ namespace DirectoryManager2
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // simpleButton21
+            // 
+            this.simpleButton21.Enabled = false;
+            this.simpleButton21.Location = new System.Drawing.Point(12, 417);
+            this.simpleButton21.Name = "simpleButton21";
+            this.simpleButton21.Size = new System.Drawing.Size(946, 22);
+            this.simpleButton21.StyleController = this.layoutControl1;
+            this.simpleButton21.TabIndex = 27;
+            this.simpleButton21.Text = "Dateien umbenennen (funktioniert, aber zur Zeit deaktiviert, weil keine Verwendun" +
+    "g)";
+            this.simpleButton21.Click += new System.EventHandler(this.simpleButton21_Click);
+            // 
             // simpleButton19
             // 
             this.simpleButton19.Appearance.BackColor = System.Drawing.Color.Crimson;
             this.simpleButton19.Appearance.Options.UseBackColor = true;
             this.simpleButton19.Enabled = false;
-            this.simpleButton19.Location = new System.Drawing.Point(209, 417);
+            this.simpleButton19.Location = new System.Drawing.Point(209, 391);
             this.simpleButton19.Name = "simpleButton19";
             this.simpleButton19.Size = new System.Drawing.Size(193, 22);
             this.simpleButton19.StyleController = this.layoutControl1;
@@ -157,7 +169,7 @@ namespace DirectoryManager2
             this.simpleButton20.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.simpleButton20.Appearance.Options.UseBackColor = true;
             this.simpleButton20.Enabled = false;
-            this.simpleButton20.Location = new System.Drawing.Point(209, 391);
+            this.simpleButton20.Location = new System.Drawing.Point(209, 365);
             this.simpleButton20.Name = "simpleButton20";
             this.simpleButton20.Size = new System.Drawing.Size(193, 22);
             this.simpleButton20.StyleController = this.layoutControl1;
@@ -170,7 +182,7 @@ namespace DirectoryManager2
             this.simpleButton17.Appearance.BackColor = System.Drawing.Color.Crimson;
             this.simpleButton17.Appearance.Options.UseBackColor = true;
             this.simpleButton17.Enabled = false;
-            this.simpleButton17.Location = new System.Drawing.Point(406, 417);
+            this.simpleButton17.Location = new System.Drawing.Point(406, 391);
             this.simpleButton17.Name = "simpleButton17";
             this.simpleButton17.Size = new System.Drawing.Size(182, 22);
             this.simpleButton17.StyleController = this.layoutControl1;
@@ -182,7 +194,7 @@ namespace DirectoryManager2
             this.simpleButton18.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.simpleButton18.Appearance.Options.UseBackColor = true;
             this.simpleButton18.Enabled = false;
-            this.simpleButton18.Location = new System.Drawing.Point(406, 391);
+            this.simpleButton18.Location = new System.Drawing.Point(406, 365);
             this.simpleButton18.Name = "simpleButton18";
             this.simpleButton18.Size = new System.Drawing.Size(182, 22);
             this.simpleButton18.StyleController = this.layoutControl1;
@@ -195,7 +207,7 @@ namespace DirectoryManager2
             this.simpleButton15.Appearance.BackColor = System.Drawing.Color.Crimson;
             this.simpleButton15.Appearance.Options.UseBackColor = true;
             this.simpleButton15.Enabled = false;
-            this.simpleButton15.Location = new System.Drawing.Point(261, 365);
+            this.simpleButton15.Location = new System.Drawing.Point(261, 339);
             this.simpleButton15.Name = "simpleButton15";
             this.simpleButton15.Size = new System.Drawing.Size(221, 22);
             this.simpleButton15.StyleController = this.layoutControl1;
@@ -208,7 +220,7 @@ namespace DirectoryManager2
             this.simpleButton16.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.simpleButton16.Appearance.Options.UseBackColor = true;
             this.simpleButton16.Enabled = false;
-            this.simpleButton16.Location = new System.Drawing.Point(261, 339);
+            this.simpleButton16.Location = new System.Drawing.Point(261, 313);
             this.simpleButton16.Name = "simpleButton16";
             this.simpleButton16.Size = new System.Drawing.Size(221, 22);
             this.simpleButton16.StyleController = this.layoutControl1;
@@ -221,7 +233,7 @@ namespace DirectoryManager2
             this.simpleButton13.Appearance.BackColor = System.Drawing.Color.Crimson;
             this.simpleButton13.Appearance.Options.UseBackColor = true;
             this.simpleButton13.Enabled = false;
-            this.simpleButton13.Location = new System.Drawing.Point(592, 417);
+            this.simpleButton13.Location = new System.Drawing.Point(592, 391);
             this.simpleButton13.Name = "simpleButton13";
             this.simpleButton13.Size = new System.Drawing.Size(164, 22);
             this.simpleButton13.StyleController = this.layoutControl1;
@@ -233,7 +245,7 @@ namespace DirectoryManager2
             this.simpleButton14.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.simpleButton14.Appearance.Options.UseBackColor = true;
             this.simpleButton14.Enabled = false;
-            this.simpleButton14.Location = new System.Drawing.Point(592, 391);
+            this.simpleButton14.Location = new System.Drawing.Point(592, 365);
             this.simpleButton14.Name = "simpleButton14";
             this.simpleButton14.Size = new System.Drawing.Size(164, 22);
             this.simpleButton14.StyleController = this.layoutControl1;
@@ -246,7 +258,7 @@ namespace DirectoryManager2
             this.simpleButton11.Appearance.BackColor = System.Drawing.Color.Crimson;
             this.simpleButton11.Appearance.Options.UseBackColor = true;
             this.simpleButton11.Enabled = false;
-            this.simpleButton11.Location = new System.Drawing.Point(760, 417);
+            this.simpleButton11.Location = new System.Drawing.Point(760, 391);
             this.simpleButton11.Name = "simpleButton11";
             this.simpleButton11.Size = new System.Drawing.Size(198, 22);
             this.simpleButton11.StyleController = this.layoutControl1;
@@ -258,7 +270,7 @@ namespace DirectoryManager2
             this.simpleButton12.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.simpleButton12.Appearance.Options.UseBackColor = true;
             this.simpleButton12.Enabled = false;
-            this.simpleButton12.Location = new System.Drawing.Point(760, 391);
+            this.simpleButton12.Location = new System.Drawing.Point(760, 365);
             this.simpleButton12.Name = "simpleButton12";
             this.simpleButton12.Size = new System.Drawing.Size(198, 22);
             this.simpleButton12.StyleController = this.layoutControl1;
@@ -271,7 +283,7 @@ namespace DirectoryManager2
             this.simpleButton9.Appearance.BackColor = System.Drawing.Color.Crimson;
             this.simpleButton9.Appearance.Options.UseBackColor = true;
             this.simpleButton9.Enabled = false;
-            this.simpleButton9.Location = new System.Drawing.Point(725, 365);
+            this.simpleButton9.Location = new System.Drawing.Point(725, 339);
             this.simpleButton9.Name = "simpleButton9";
             this.simpleButton9.Size = new System.Drawing.Size(233, 22);
             this.simpleButton9.StyleController = this.layoutControl1;
@@ -284,7 +296,7 @@ namespace DirectoryManager2
             this.simpleButton10.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.simpleButton10.Appearance.Options.UseBackColor = true;
             this.simpleButton10.Enabled = false;
-            this.simpleButton10.Location = new System.Drawing.Point(725, 339);
+            this.simpleButton10.Location = new System.Drawing.Point(725, 313);
             this.simpleButton10.Name = "simpleButton10";
             this.simpleButton10.Size = new System.Drawing.Size(233, 22);
             this.simpleButton10.StyleController = this.layoutControl1;
@@ -297,7 +309,7 @@ namespace DirectoryManager2
             this.simpleButton7.Appearance.BackColor = System.Drawing.Color.Crimson;
             this.simpleButton7.Appearance.Options.UseBackColor = true;
             this.simpleButton7.Enabled = false;
-            this.simpleButton7.Location = new System.Drawing.Point(486, 365);
+            this.simpleButton7.Location = new System.Drawing.Point(486, 339);
             this.simpleButton7.Name = "simpleButton7";
             this.simpleButton7.Size = new System.Drawing.Size(235, 22);
             this.simpleButton7.StyleController = this.layoutControl1;
@@ -310,7 +322,7 @@ namespace DirectoryManager2
             this.simpleButton8.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.simpleButton8.Appearance.Options.UseBackColor = true;
             this.simpleButton8.Enabled = false;
-            this.simpleButton8.Location = new System.Drawing.Point(486, 339);
+            this.simpleButton8.Location = new System.Drawing.Point(486, 313);
             this.simpleButton8.Name = "simpleButton8";
             this.simpleButton8.Size = new System.Drawing.Size(235, 22);
             this.simpleButton8.StyleController = this.layoutControl1;
@@ -337,7 +349,7 @@ namespace DirectoryManager2
             this.simpleButton5.Appearance.BackColor = System.Drawing.Color.Crimson;
             this.simpleButton5.Appearance.Options.UseBackColor = true;
             this.simpleButton5.Enabled = false;
-            this.simpleButton5.Location = new System.Drawing.Point(12, 365);
+            this.simpleButton5.Location = new System.Drawing.Point(12, 339);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(245, 22);
             this.simpleButton5.StyleController = this.layoutControl1;
@@ -350,7 +362,7 @@ namespace DirectoryManager2
             this.simpleButton4.Appearance.BackColor = System.Drawing.Color.Crimson;
             this.simpleButton4.Appearance.Options.UseBackColor = true;
             this.simpleButton4.Enabled = false;
-            this.simpleButton4.Location = new System.Drawing.Point(12, 417);
+            this.simpleButton4.Location = new System.Drawing.Point(12, 391);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(193, 22);
             this.simpleButton4.StyleController = this.layoutControl1;
@@ -363,7 +375,7 @@ namespace DirectoryManager2
             this.simpleButton3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.simpleButton3.Appearance.Options.UseBackColor = true;
             this.simpleButton3.Enabled = false;
-            this.simpleButton3.Location = new System.Drawing.Point(12, 339);
+            this.simpleButton3.Location = new System.Drawing.Point(12, 313);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(245, 22);
             this.simpleButton3.StyleController = this.layoutControl1;
@@ -373,7 +385,7 @@ namespace DirectoryManager2
             // 
             // listBoxControl1
             // 
-            this.listBoxControl1.Location = new System.Drawing.Point(12, 92);
+            this.listBoxControl1.Location = new System.Drawing.Point(12, 66);
             this.listBoxControl1.Name = "listBoxControl1";
             this.listBoxControl1.Size = new System.Drawing.Size(946, 243);
             this.listBoxControl1.StyleController = this.layoutControl1;
@@ -384,7 +396,7 @@ namespace DirectoryManager2
             this.simpleButton2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.simpleButton2.Appearance.Options.UseBackColor = true;
             this.simpleButton2.Enabled = false;
-            this.simpleButton2.Location = new System.Drawing.Point(12, 391);
+            this.simpleButton2.Location = new System.Drawing.Point(12, 365);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(193, 22);
             this.simpleButton2.StyleController = this.layoutControl1;
@@ -465,7 +477,7 @@ namespace DirectoryManager2
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.listBoxControl1;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 80);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 54);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(950, 247);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -474,7 +486,7 @@ namespace DirectoryManager2
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.simpleButton3;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 327);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 301);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(249, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
@@ -483,7 +495,7 @@ namespace DirectoryManager2
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.simpleButton5;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 353);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 327);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(249, 26);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
@@ -501,7 +513,7 @@ namespace DirectoryManager2
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.simpleButton7;
-            this.layoutControlItem9.Location = new System.Drawing.Point(474, 353);
+            this.layoutControlItem9.Location = new System.Drawing.Point(474, 327);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(239, 26);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
@@ -510,7 +522,7 @@ namespace DirectoryManager2
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.simpleButton8;
-            this.layoutControlItem10.Location = new System.Drawing.Point(474, 327);
+            this.layoutControlItem10.Location = new System.Drawing.Point(474, 301);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Size = new System.Drawing.Size(239, 26);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
@@ -519,7 +531,7 @@ namespace DirectoryManager2
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.simpleButton10;
-            this.layoutControlItem12.Location = new System.Drawing.Point(713, 327);
+            this.layoutControlItem12.Location = new System.Drawing.Point(713, 301);
             this.layoutControlItem12.Name = "layoutControlItem12";
             this.layoutControlItem12.Size = new System.Drawing.Size(237, 26);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
@@ -528,7 +540,7 @@ namespace DirectoryManager2
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.simpleButton9;
-            this.layoutControlItem11.Location = new System.Drawing.Point(713, 353);
+            this.layoutControlItem11.Location = new System.Drawing.Point(713, 327);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Size = new System.Drawing.Size(237, 26);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
@@ -537,7 +549,7 @@ namespace DirectoryManager2
             // layoutControlItem18
             // 
             this.layoutControlItem18.Control = this.simpleButton16;
-            this.layoutControlItem18.Location = new System.Drawing.Point(249, 327);
+            this.layoutControlItem18.Location = new System.Drawing.Point(249, 301);
             this.layoutControlItem18.Name = "layoutControlItem18";
             this.layoutControlItem18.Size = new System.Drawing.Size(225, 26);
             this.layoutControlItem18.TextSize = new System.Drawing.Size(0, 0);
@@ -546,7 +558,7 @@ namespace DirectoryManager2
             // layoutControlItem17
             // 
             this.layoutControlItem17.Control = this.simpleButton15;
-            this.layoutControlItem17.Location = new System.Drawing.Point(249, 353);
+            this.layoutControlItem17.Location = new System.Drawing.Point(249, 327);
             this.layoutControlItem17.Name = "layoutControlItem17";
             this.layoutControlItem17.Size = new System.Drawing.Size(225, 26);
             this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
@@ -555,7 +567,7 @@ namespace DirectoryManager2
             // layoutControlItem19
             // 
             this.layoutControlItem19.Control = this.simpleButton17;
-            this.layoutControlItem19.Location = new System.Drawing.Point(394, 405);
+            this.layoutControlItem19.Location = new System.Drawing.Point(394, 379);
             this.layoutControlItem19.Name = "layoutControlItem19";
             this.layoutControlItem19.Size = new System.Drawing.Size(186, 26);
             this.layoutControlItem19.TextSize = new System.Drawing.Size(0, 0);
@@ -564,7 +576,7 @@ namespace DirectoryManager2
             // layoutControlItem20
             // 
             this.layoutControlItem20.Control = this.simpleButton18;
-            this.layoutControlItem20.Location = new System.Drawing.Point(394, 379);
+            this.layoutControlItem20.Location = new System.Drawing.Point(394, 353);
             this.layoutControlItem20.Name = "layoutControlItem20";
             this.layoutControlItem20.Size = new System.Drawing.Size(186, 26);
             this.layoutControlItem20.TextSize = new System.Drawing.Size(0, 0);
@@ -573,7 +585,7 @@ namespace DirectoryManager2
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.simpleButton2;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 379);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 353);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(197, 26);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
@@ -582,7 +594,7 @@ namespace DirectoryManager2
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.simpleButton4;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 405);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 379);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(197, 26);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
@@ -591,7 +603,7 @@ namespace DirectoryManager2
             // layoutControlItem15
             // 
             this.layoutControlItem15.Control = this.simpleButton13;
-            this.layoutControlItem15.Location = new System.Drawing.Point(580, 405);
+            this.layoutControlItem15.Location = new System.Drawing.Point(580, 379);
             this.layoutControlItem15.Name = "layoutControlItem15";
             this.layoutControlItem15.Size = new System.Drawing.Size(168, 26);
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
@@ -600,7 +612,7 @@ namespace DirectoryManager2
             // layoutControlItem16
             // 
             this.layoutControlItem16.Control = this.simpleButton14;
-            this.layoutControlItem16.Location = new System.Drawing.Point(580, 379);
+            this.layoutControlItem16.Location = new System.Drawing.Point(580, 353);
             this.layoutControlItem16.Name = "layoutControlItem16";
             this.layoutControlItem16.Size = new System.Drawing.Size(168, 26);
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
@@ -609,7 +621,7 @@ namespace DirectoryManager2
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.simpleButton12;
-            this.layoutControlItem14.Location = new System.Drawing.Point(748, 379);
+            this.layoutControlItem14.Location = new System.Drawing.Point(748, 353);
             this.layoutControlItem14.Name = "layoutControlItem14";
             this.layoutControlItem14.Size = new System.Drawing.Size(202, 26);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
@@ -618,7 +630,7 @@ namespace DirectoryManager2
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.simpleButton11;
-            this.layoutControlItem13.Location = new System.Drawing.Point(748, 405);
+            this.layoutControlItem13.Location = new System.Drawing.Point(748, 379);
             this.layoutControlItem13.Name = "layoutControlItem13";
             this.layoutControlItem13.Size = new System.Drawing.Size(202, 26);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
@@ -627,7 +639,7 @@ namespace DirectoryManager2
             // layoutControlItem22
             // 
             this.layoutControlItem22.Control = this.simpleButton20;
-            this.layoutControlItem22.Location = new System.Drawing.Point(197, 379);
+            this.layoutControlItem22.Location = new System.Drawing.Point(197, 353);
             this.layoutControlItem22.Name = "layoutControlItem22";
             this.layoutControlItem22.Size = new System.Drawing.Size(197, 26);
             this.layoutControlItem22.TextSize = new System.Drawing.Size(0, 0);
@@ -636,26 +648,16 @@ namespace DirectoryManager2
             // layoutControlItem21
             // 
             this.layoutControlItem21.Control = this.simpleButton19;
-            this.layoutControlItem21.Location = new System.Drawing.Point(197, 405);
+            this.layoutControlItem21.Location = new System.Drawing.Point(197, 379);
             this.layoutControlItem21.Name = "layoutControlItem21";
             this.layoutControlItem21.Size = new System.Drawing.Size(197, 26);
             this.layoutControlItem21.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem21.TextVisible = false;
             // 
-            // simpleButton21
-            // 
-            this.simpleButton21.Location = new System.Drawing.Point(12, 66);
-            this.simpleButton21.Name = "simpleButton21";
-            this.simpleButton21.Size = new System.Drawing.Size(946, 22);
-            this.simpleButton21.StyleController = this.layoutControl1;
-            this.simpleButton21.TabIndex = 27;
-            this.simpleButton21.Text = "MP3 zu mp3";
-            this.simpleButton21.Click += new System.EventHandler(this.simpleButton21_Click);
-            // 
             // layoutControlItem23
             // 
             this.layoutControlItem23.Control = this.simpleButton21;
-            this.layoutControlItem23.Location = new System.Drawing.Point(0, 54);
+            this.layoutControlItem23.Location = new System.Drawing.Point(0, 405);
             this.layoutControlItem23.Name = "layoutControlItem23";
             this.layoutControlItem23.Size = new System.Drawing.Size(950, 26);
             this.layoutControlItem23.TextSize = new System.Drawing.Size(0, 0);

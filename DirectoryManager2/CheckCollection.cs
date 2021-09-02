@@ -110,7 +110,7 @@ namespace DirectoryManager2
 
             SehrkleineOrdnerfinden();
 
-            DoppelteDateienFinden();
+            //DoppelteDateienFinden();
 
             verschachtelteOrdnerfinden();
 
@@ -316,7 +316,9 @@ namespace DirectoryManager2
             foreach (var item in hoerbuecher_List)
             {
                 wrongFileTypes_List.AddRange(item.GetFiles("*", SearchOption.AllDirectories)
-                    .Where(x => !x.FullName.EndsWith(".mp3") && !x.FullName.EndsWith(".mp4") && !x.FullName.EndsWith(".m4a") && !x.FullName.EndsWith(".wma") && !x.FullName.EndsWith(".ogg")));
+                    .Where(x => !x.FullName.EndsWith(".mp3") && !x.FullName.EndsWith(".mp4") 
+                    && !x.FullName.EndsWith(".m4a") && !x.FullName.EndsWith(".wma") && !x.FullName.EndsWith(".ogg") 
+                    && !x.FullName.EndsWith(".mp2") && !x.FullName.EndsWith(".Mp3")));
             }
 
             listBoxControl1.Items.Add("Falsche Dateitypen: " + wrongFileTypes_List.Count());
@@ -500,20 +502,20 @@ namespace DirectoryManager2
         }
 
 
-        private void simpleButton21_Click(object sender, EventArgs e)   // MP3 Endung zu mp3
+        private void simpleButton21_Click(object sender, EventArgs e)   // Dateien umbenennen (aktuell keine Verwendung)
         {
             int itemcounter = 0;
             try
             {
-                // groß in klein Dateiendung MP3 (einmalig)
+                // einen Teil des Dateinamens ersetzen durch etwas anderes mit .Replace()
                 foreach (var item in hoerbuecher_List)
                 {
-                    var umbenennen = item.GetFiles("*", SearchOption.AllDirectories).Where(x => x.FullName.EndsWith(".MP3"));
+                    var umbenennen = item.GetFiles("*", SearchOption.AllDirectories).Where(x => x.FullName.EndsWith(""));
 
                     foreach (var file in umbenennen)
                     {
                         var newfilename = file.Name;
-                        newfilename = newfilename.Replace(".MP3", ".mp3");
+                        newfilename = newfilename.Replace("", "");
                         file.MoveTo(file.DirectoryName + "\\" + newfilename);
                         itemcounter++;
                     }
@@ -527,7 +529,6 @@ namespace DirectoryManager2
             {
                 listBoxControl1.Items.Add($"{itemcounter} Dateien umbennant");
             }
-            
         }
     }
 }
