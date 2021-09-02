@@ -75,6 +75,8 @@ namespace DirectoryManager2
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.simpleButton21 = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).BeginInit();
@@ -102,10 +104,12 @@ namespace DirectoryManager2
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.simpleButton21);
             this.layoutControl1.Controls.Add(this.simpleButton19);
             this.layoutControl1.Controls.Add(this.simpleButton20);
             this.layoutControl1.Controls.Add(this.simpleButton17);
@@ -369,9 +373,9 @@ namespace DirectoryManager2
             // 
             // listBoxControl1
             // 
-            this.listBoxControl1.Location = new System.Drawing.Point(12, 66);
+            this.listBoxControl1.Location = new System.Drawing.Point(12, 92);
             this.listBoxControl1.Name = "listBoxControl1";
-            this.listBoxControl1.Size = new System.Drawing.Size(946, 269);
+            this.listBoxControl1.Size = new System.Drawing.Size(946, 243);
             this.listBoxControl1.StyleController = this.layoutControl1;
             this.listBoxControl1.TabIndex = 8;
             // 
@@ -434,7 +438,8 @@ namespace DirectoryManager2
             this.layoutControlItem14,
             this.layoutControlItem13,
             this.layoutControlItem22,
-            this.layoutControlItem21});
+            this.layoutControlItem21,
+            this.layoutControlItem23});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(970, 451);
             this.Root.TextVisible = false;
@@ -460,9 +465,9 @@ namespace DirectoryManager2
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.listBoxControl1;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 54);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 80);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(950, 273);
+            this.layoutControlItem3.Size = new System.Drawing.Size(950, 247);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -637,6 +642,25 @@ namespace DirectoryManager2
             this.layoutControlItem21.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem21.TextVisible = false;
             // 
+            // simpleButton21
+            // 
+            this.simpleButton21.Location = new System.Drawing.Point(12, 66);
+            this.simpleButton21.Name = "simpleButton21";
+            this.simpleButton21.Size = new System.Drawing.Size(946, 22);
+            this.simpleButton21.StyleController = this.layoutControl1;
+            this.simpleButton21.TabIndex = 27;
+            this.simpleButton21.Text = "MP3 zu mp3";
+            this.simpleButton21.Click += new System.EventHandler(this.simpleButton21_Click);
+            // 
+            // layoutControlItem23
+            // 
+            this.layoutControlItem23.Control = this.simpleButton21;
+            this.layoutControlItem23.Location = new System.Drawing.Point(0, 54);
+            this.layoutControlItem23.Name = "layoutControlItem23";
+            this.layoutControlItem23.Size = new System.Drawing.Size(950, 26);
+            this.layoutControlItem23.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem23.TextVisible = false;
+            // 
             // CheckCollection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -671,6 +695,7 @@ namespace DirectoryManager2
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -723,5 +748,7 @@ namespace DirectoryManager2
         private DevExpress.XtraEditors.SimpleButton simpleButton20;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem22;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem21;
+        private DevExpress.XtraEditors.SimpleButton simpleButton21;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem23;
     }
 }

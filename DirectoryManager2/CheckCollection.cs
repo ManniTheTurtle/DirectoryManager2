@@ -73,7 +73,7 @@ namespace DirectoryManager2
             {
                 if (item is SimpleButton)
                 {
-                    if ((item as SimpleButton).Text != "Check!" && (item as SimpleButton).Text != "Wählen...")
+                    if ((item as SimpleButton).Text != "Check!" && (item as SimpleButton).Text != "Wählen..." && (item as SimpleButton).Text != "MP3 zu mp3")
                     {
                         (item as SimpleButton).Enabled = false;
                     }
@@ -106,11 +106,11 @@ namespace DirectoryManager2
 
             LeereUnterordnerfinden();
 
-            //SehrKleineDateienFinden();
+            SehrKleineDateienFinden();
 
             SehrkleineOrdnerfinden();
 
-            //DoppelteDateienFinden();
+            DoppelteDateienFinden();
 
             verschachtelteOrdnerfinden();
 
@@ -136,7 +136,7 @@ namespace DirectoryManager2
                 var uppertestArray = uppertest.Split(' ');
                 foreach (var part in uppertestArray)
                 {
-                    if (!string.IsNullOrEmpty(part) && (!Char.IsLetter(part[0]) || !Char.IsUpper(part[0])))
+                    if (!string.IsNullOrEmpty(part) && !part.Equals("von") && !part.Equals("de") && (!Char.IsLetter(part[0]) || !Char.IsUpper(part[0])))
                     {
                         SchreibfehlerListe.Add(item.Name + " --> Autorenname ist klein");
                     }
@@ -154,7 +154,7 @@ namespace DirectoryManager2
                     SchreibfehlerListe.Add(item.Name + " --> Doppeltes Leerzeichen");
                 }
 
-                // prüfe auf Doppelleerzeichen
+                // prüfe auf Bindestrich
                 if (!item.Name.Contains(" - "))
                 {
                     SchreibfehlerListe.Add(item.Name + " --> Falsche Trennung");
@@ -279,6 +279,7 @@ namespace DirectoryManager2
                 smallFiles_List.AddRange(item.GetFiles("*", SearchOption.AllDirectories)
                     .Where(x => x.Length < MySettings.Instance().minimumfilesize));
             }
+
             var minfilesize = MySettings.Instance().minimumfilesize / 1000;
             listBoxControl1.Items.Add($"Dateien unter {minfilesize} KB: " + smallFiles_List.Count());
 
@@ -299,7 +300,8 @@ namespace DirectoryManager2
                     tinyfolders_List.Add(item);
                 }
             }
-            var minfoldersize = MySettings.Instance().minimumfoldersize / 1000000;
+
+            int minfoldersize = MySettings.Instance().minimumfoldersize / 1000000;
             listBoxControl1.Items.Add($"Ordner unter {minfoldersize} MB: " + tinyfolders_List.Count());
 
             if (tinyfolders_List.Count > 0)
@@ -314,7 +316,7 @@ namespace DirectoryManager2
             foreach (var item in hoerbuecher_List)
             {
                 wrongFileTypes_List.AddRange(item.GetFiles("*", SearchOption.AllDirectories)
-                    .Where(x => !x.FullName.Contains(".mp3") && !x.FullName.Contains(".mp4") && !x.FullName.Contains(".m4a")));
+                    .Where(x => !x.FullName.EndsWith(".mp3") && !x.FullName.EndsWith(".mp4") && !x.FullName.EndsWith(".m4a") && !x.FullName.EndsWith(".wma") && !x.FullName.EndsWith(".ogg")));
             }
 
             listBoxControl1.Items.Add("Falsche Dateitypen: " + wrongFileTypes_List.Count());
@@ -495,6 +497,37 @@ namespace DirectoryManager2
         private void simpleButton20_Click(object sender, EventArgs e)   // Bennenungsfehler anzeigen Button
         {
             listBoxControl1.DataSource = SchreibfehlerListe;
+        }
+
+
+        private void simpleButton21_Click(object sender, EventArgs e)   // MP3 Endung zu mp3
+        {
+            int itemcounter = 0;
+            try
+            {
+                // groß in klein Dateiendung MP3 (einmalig)
+                foreach (var item in hoerbuecher_List)
+                {
+                    var umbenennen = item.GetFiles("*", SearchOption.AllDirectories).Where(x => x.FullName.EndsWith(".MP3"));
+
+                    foreach (var file in umbenennen)
+                    {
+                        var newfilename = file.Name;
+                        newfilename = newfilename.Replace(".MP3", ".mp3");
+                        file.MoveTo(file.DirectoryName + "\\" + newfilename);
+                        itemcounter++;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                listBoxControl1.Items.Add($"{itemcounter} Dateien umbennant");
+            }
+            
         }
     }
 }
