@@ -35,20 +35,20 @@
     <Reference Include="DevExpress.BonusSkins.v21.1" />
     <Reference Include="DevExpress.Data.Desktop.v21.1" />
     <Reference Include="DevExpress.Data.v21.1" />
-    <Reference Include="DevExpress.Dialogs.v21.1.Core, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dialogs.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v21.1.Core" />
     <Reference Include="DevExpress.Utils.v21.1" />
     <Reference Include="DevExpress.XtraBars.v21.1" />
     <Reference Include="DevExpress.Sparkline.v21.1.Core" />
-    <Reference Include="DevExpress.XtraDialogs.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraDialogs.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v21.1" />
-    <Reference Include="DevExpress.XtraGrid.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+    <Reference Include="DevExpress.XtraGrid.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
     </Reference>
-    <Reference Include="DevExpress.XtraLayout.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraLayout.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraPrinting.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraTreeList.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraVerticalGrid.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -89,12 +89,6 @@
     <Compile Include="DM2_Main.Designer.cs">
       <DependentUpon>DM2_Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="DuplicateFolders.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DuplicateFolders.Designer.cs">
-      <DependentUpon>DuplicateFolders.cs</DependentUpon>
-    </Compile>
     <Compile Include="HarmonizeCollections.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -109,6 +103,12 @@
     </Compile>
     <Compile Include="DM2_WaitForm.Designer.cs">
       <DependentUpon>DM2_WaitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReplaceFilename.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReplaceFilename.Designer.cs">
+      <DependentUpon>ReplaceFilename.cs</DependentUpon>
     </Compile>
     <Compile Include="SettingsGrid.cs">
       <SubType>UserControl</SubType>
@@ -128,9 +128,6 @@
     <EmbeddedResource Include="DM2_Main.resx">
       <DependentUpon>DM2_Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DuplicateFolders.resx">
-      <DependentUpon>DuplicateFolders.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HarmonizeCollections.resx">
       <DependentUpon>HarmonizeCollections.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +143,9 @@
     </Compile>
     <EmbeddedResource Include="DM2_WaitForm.resx">
       <DependentUpon>DM2_WaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReplaceFilename.resx">
+      <DependentUpon>ReplaceFilename.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SettingsGrid.resx">
       <DependentUpon>SettingsGrid.cs</DependentUpon>

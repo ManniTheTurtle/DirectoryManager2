@@ -119,6 +119,17 @@ namespace DirectoryManager2
             layoutControlItem4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
         }
 
+        // Dateinamen ändern
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (var item in usercontrols_List)
+            {
+                item.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            }
+
+            layoutControlItem7.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+        }
+
         // Settings
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -137,16 +148,6 @@ namespace DirectoryManager2
             File.WriteAllText(MySettings.Instance().path, jsonstring);
         }
 
-        // Ordner duplizieren
-        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            foreach (var item in usercontrols_List)
-            {
-                item.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-            }
-
-            layoutControlItem6.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
-        }
     }
 
     public interface IObserver
