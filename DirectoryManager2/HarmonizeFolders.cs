@@ -13,19 +13,16 @@ using System.Windows.Forms;
 
 namespace DirectoryManager2
 {
-    public partial class HarmonizeCollections : DevExpress.XtraEditors.XtraUserControl
+    public partial class HarmonizeFolders : DevExpress.XtraEditors.XtraUserControl
     {
         List<DirectoryInfo> currentCollection;
         List<DirectoryInfo> backupCollection;
         List<DirectoryInfo> backupfolderstodelete;
         List<DirectoryInfo> missingfolders;
 
-        public HarmonizeCollections()
+        public HarmonizeFolders()
         {
             InitializeComponent();
-
-            textEdit1.Text = @"C:\Users\Hackm\Desktop\DirectoryManager Testing\MyCollection";
-            textEdit2.Text = @"C:\Users\Hackm\Desktop\DirectoryManager Testing\StuffToDelete";
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)    // aktuelle Sammlung wählen
@@ -115,9 +112,10 @@ namespace DirectoryManager2
             listBoxControl1.Items.AddRange(missingfolders.ToArray());
 
             simpleButton4.Enabled = true;
+            simpleButton6.Enabled = true;
         }
 
-        private void simpleButton4_Click(object sender, EventArgs e)    // Harmonize Button
+        private void simpleButton4_Click(object sender, EventArgs e)    // Überflüssige Ordner löschen
         {
             if (backupfolderstodelete.Count() > 0)
             {
@@ -127,16 +125,40 @@ namespace DirectoryManager2
                 }
             }
 
+            simpleButton5.Enabled = false;
+            simpleButton4.Enabled = false;
+            simpleButton6.Enabled = false;
+        }
+
+        private void simpleButton6_Click(object sender, EventArgs e)    // Fehlende Ordner ergänzen
+        {
             if (missingfolders.Count() > 0)
             {
                 foreach (var item in missingfolders)
                 {
-                    item.Delete(true);
+                    KopiereAlles(item);
                 }
             }
-
             simpleButton5.Enabled = false;
             simpleButton4.Enabled = false;
+            simpleButton6.Enabled = false;
+        }
+
+        public void KopiereAlles(DirectoryInfo item)
+        {
+            Directory.CreateDirectory(item.FullName.Replace(textEdit1.Text, textEdit2.Text));
+
+            //Now Create all of the new subdirectories (es müssen zuerst alle Ordner erzeugt werden, sonst kann er die Files in den unterordnern nicht erzeugen)
+            foreach (string dirPath in Directory.GetDirectories(item.FullName, "*", SearchOption.AllDirectories))
+            {
+                Directory.CreateDirectory(dirPath.Replace(textEdit1.Text, textEdit2.Text));
+            }
+
+            //Copy all the files (replace if already existing) (erst, nachdem die Unterordner alle existieren, können jetzt die dateien darin erstellt werden)
+            foreach (string filepath in Directory.GetFiles(item.FullName, "*.*", SearchOption.AllDirectories))
+            {
+                File.Copy(filepath, filepath.Replace(textEdit1.Text, textEdit2.Text), true);
+            }
         }
     }
 }

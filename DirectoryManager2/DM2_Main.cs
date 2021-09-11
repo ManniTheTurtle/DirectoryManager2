@@ -108,7 +108,7 @@ namespace DirectoryManager2
             }
         }
 
-        // Sicherungen angleichen
+        // Ordner angleichen
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             foreach (var item in usercontrols_List)
@@ -117,6 +117,17 @@ namespace DirectoryManager2
             }
 
             layoutControlItem4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+        }
+
+        // Dateien angleichen
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (var item in usercontrols_List)
+            {
+                item.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            }
+
+            layoutControlItem6.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
         }
 
         // Dateinamen ändern
@@ -148,6 +159,15 @@ namespace DirectoryManager2
             File.WriteAllText(MySettings.Instance().path, jsonstring);
         }
 
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (var item in usercontrols_List)
+            {
+                item.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            }
+
+            layoutControlItem9.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+        }
     }
 
     public interface IObserver

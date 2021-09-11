@@ -77,9 +77,15 @@ namespace DirectoryManager2
             {
                 foreach (var fi in fileinfoList)
                 {
-                    maindirectoryinfo.CreateSubdirectory(Path.GetFileNameWithoutExtension(fi.FullName) + AddAudioBookType());
+                    try
+                    {
+                        maindirectoryinfo.CreateSubdirectory(Path.GetFileNameWithoutExtension(fi.FullName) + AddAudioBookType());
 
-                    fi.MoveTo(maindirectoryinfo.FullName + "\\" + Path.GetFileNameWithoutExtension(fi.FullName) + AddAudioBookType() + "\\" + fi.Name);
+                        fi.MoveTo(maindirectoryinfo.FullName + "\\" + Path.GetFileNameWithoutExtension(fi.FullName) + AddAudioBookType() + "\\" + fi.Name);
+                    }
+                    catch
+                    {
+                    }
                 }
 
                 // directoryinfoList = maindirectoryinfo.GetDirectories().Where(x => x.Name.Contains("[Hörspiel]") || x.Name.Contains("[Lesung]")).ToList();
