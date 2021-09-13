@@ -35,20 +35,20 @@
     <Reference Include="DevExpress.BonusSkins.v21.1" />
     <Reference Include="DevExpress.Data.Desktop.v21.1" />
     <Reference Include="DevExpress.Data.v21.1" />
-    <Reference Include="DevExpress.Dialogs.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dialogs.v21.1.Core, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v21.1.Core" />
     <Reference Include="DevExpress.Utils.v21.1" />
     <Reference Include="DevExpress.XtraBars.v21.1" />
     <Reference Include="DevExpress.Sparkline.v21.1.Core" />
-    <Reference Include="DevExpress.XtraDialogs.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraDialogs.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v21.1" />
-    <Reference Include="DevExpress.XtraGrid.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+    <Reference Include="DevExpress.XtraGrid.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
     </Reference>
-    <Reference Include="DevExpress.XtraLayout.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraLayout.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraPrinting.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraTreeList.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraVerticalGrid.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -63,6 +63,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="TagLibSharp, Version=2.2.0.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL">
+      <HintPath>..\packages\TagLibSharp.2.2.0\lib\net45\TagLibSharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CheckCollection.cs">
@@ -89,11 +92,17 @@
     <Compile Include="DM2_Main.Designer.cs">
       <DependentUpon>DM2_Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="HarmonizeCollections.cs">
+    <Compile Include="HarmonizeFolders.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HarmonizeCollections.Designer.cs">
-      <DependentUpon>HarmonizeCollections.cs</DependentUpon>
+    <Compile Include="HarmonizeFolders.Designer.cs">
+      <DependentUpon>HarmonizeFolders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HarmonizeFiles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HarmonizeFiles.Designer.cs">
+      <DependentUpon>HarmonizeFiles.cs</DependentUpon>
     </Compile>
     <Compile Include="MySettings.cs" />
     <Compile Include="Program.cs" />
@@ -116,6 +125,12 @@
     <Compile Include="SettingsGrid.Designer.cs">
       <DependentUpon>SettingsGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="CutFilesFromFolders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CutFilesFromFolders.Designer.cs">
+      <DependentUpon>CutFilesFromFolders.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CheckCollection.resx">
       <DependentUpon>CheckCollection.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,8 +143,11 @@
     <EmbeddedResource Include="DM2_Main.resx">
       <DependentUpon>DM2_Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HarmonizeCollections.resx">
-      <DependentUpon>HarmonizeCollections.cs</DependentUpon>
+    <EmbeddedResource Include="HarmonizeFiles.resx">
+      <DependentUpon>HarmonizeFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HarmonizeFolders.resx">
+      <DependentUpon>HarmonizeFolders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -149,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SettingsGrid.resx">
       <DependentUpon>SettingsGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CutFilesFromFolders.resx">
+      <DependentUpon>CutFilesFromFolders.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

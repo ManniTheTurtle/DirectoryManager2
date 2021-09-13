@@ -105,5 +105,76 @@ namespace DirectoryManager2
                 listBoxControl1.Items.Add($"{itemcounter} Dateien umbennant");
             }
         }
+
+        string newname;
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            main_folder = new DirectoryInfo(textEdit1.Text);
+
+            List<FileInfo> alldocumentaries = new List<FileInfo>();
+
+            alldocumentaries = main_folder.GetFiles("*", SearchOption.AllDirectories).ToList();
+
+            foreach (var item in alldocumentaries)
+            {
+                if (!item.Name.Contains("."))
+                {
+                    if (item.Name.Contains(" avi"))
+                    {
+                        item.MoveTo(item.FullName + ".avi");
+                    }
+                    else if (item.Name.Contains(" mpg"))
+                    {
+                        item.MoveTo(item.FullName + ".mpg");
+                    }
+                    else if (item.Name.Contains(" mpeg"))
+                    {
+                        item.MoveTo(item.FullName + ".mpeg");
+                    }
+                    else if (item.Name.Contains(" mp4"))
+                    {
+                        item.MoveTo(item.FullName + ".mp4");
+                    }
+                    else if (item.Name.Contains(" divx"))
+                    {
+                        item.MoveTo(item.FullName + ".avi");
+                    }
+                }
+            }
+
+            foreach (var item in alldocumentaries)
+            {
+                if (item.Name.Contains(" avi"))
+                {
+                    newname = item.Name.Replace(" avi", "");
+
+                    item.MoveTo(item.FullName.Replace(item.Name, newname));
+                }
+                else if (item.Name.Contains(" mpg"))
+                {
+                    newname = item.Name.Replace(" mpg", "");
+
+                    item.MoveTo(item.FullName.Replace(item.Name, newname));
+                }
+                else if (item.Name.Contains(" mpeg"))
+                {
+                    newname = item.Name.Replace(" mpeg", "");
+
+                    item.MoveTo(item.FullName.Replace(item.Name, newname));
+                }
+                else if (item.Name.Contains(" mp4"))
+                {
+                    newname = item.Name.Replace(" mp4", "");
+
+                    item.MoveTo(item.FullName.Replace(item.Name, newname));
+                }
+                else if (item.Name.Contains(" divx"))
+                {
+                    newname = item.Name.Replace(" divx", "");
+
+                    item.MoveTo(item.FullName.Replace(item.Name, newname));
+                }
+            }
+        }
     }
 }
