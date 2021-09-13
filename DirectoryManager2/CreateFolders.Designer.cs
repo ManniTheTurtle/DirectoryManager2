@@ -136,7 +136,7 @@ namespace DirectoryManager2
             this.simpleButton3.Size = new System.Drawing.Size(612, 24);
             this.simpleButton3.StyleController = this.layoutControl1;
             this.simpleButton3.TabIndex = 10;
-            this.simpleButton3.Text = "Ordnernamen bereinigen";
+            this.simpleButton3.Text = "Ordnernamen automatisch bereinigen";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // simpleButton2

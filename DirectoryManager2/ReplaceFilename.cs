@@ -14,6 +14,7 @@ namespace DirectoryManager2
 {
     public partial class ReplaceFilename : DevExpress.XtraEditors.XtraUserControl
     {
+        DirectoryInfo main_folder;
         List<FileInfo> allFiles = new List<FileInfo>();
         List<FileInfo> filesThatContainString = new List<FileInfo>();
         string wantedPart;

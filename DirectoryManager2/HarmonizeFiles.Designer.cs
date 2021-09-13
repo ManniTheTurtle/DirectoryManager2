@@ -83,30 +83,41 @@ namespace DirectoryManager2
             // 
             // simpleButton5
             // 
+            this.simpleButton5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.simpleButton5.Appearance.Options.UseBackColor = true;
             this.simpleButton5.Location = new System.Drawing.Point(12, 64);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(986, 22);
             this.simpleButton5.StyleController = this.layoutControl1;
             this.simpleButton5.TabIndex = 11;
             this.simpleButton5.Text = "Check!";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // simpleButton4
             // 
+            this.simpleButton4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.simpleButton4.Appearance.Options.UseBackColor = true;
+            this.simpleButton4.Enabled = false;
             this.simpleButton4.Location = new System.Drawing.Point(12, 530);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(986, 22);
             this.simpleButton4.StyleController = this.layoutControl1;
             this.simpleButton4.TabIndex = 10;
             this.simpleButton4.Text = "Fehlende Dateien ergänzen";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // simpleButton3
             // 
+            this.simpleButton3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.simpleButton3.Appearance.Options.UseBackColor = true;
+            this.simpleButton3.Enabled = false;
             this.simpleButton3.Location = new System.Drawing.Point(12, 504);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(986, 22);
             this.simpleButton3.StyleController = this.layoutControl1;
             this.simpleButton3.TabIndex = 9;
             this.simpleButton3.Text = "Überflüssige Dateien löschen";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // listBoxControl1
             // 
@@ -118,6 +129,8 @@ namespace DirectoryManager2
             // 
             // simpleButton2
             // 
+            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.simpleButton2.Appearance.Options.UseBackColor = true;
             this.simpleButton2.Location = new System.Drawing.Point(642, 38);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(356, 22);
@@ -128,6 +141,8 @@ namespace DirectoryManager2
             // 
             // simpleButton1
             // 
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.Location = new System.Drawing.Point(642, 12);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(356, 22);

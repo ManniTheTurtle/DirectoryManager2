@@ -42,8 +42,8 @@ namespace DirectoryManager2
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.harmonizeFiles1 = new DirectoryManager2.HarmonizeFiles();
             this.cutFilesFromFolders1 = new DirectoryManager2.CutFilesFromFolders();
             this.replaceFilename2 = new DirectoryManager2.ReplaceFilename();
             this.replaceFilename1 = new DirectoryManager2.ReplaceFilename();
@@ -61,9 +61,8 @@ namespace DirectoryManager2
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.splashScreenManager2 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DirectoryManager2.DM2_WaitForm), true, true);
-            this.harmonizeFiles1 = new DirectoryManager2.HarmonizeFiles();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.splashScreenManager2 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DirectoryManager2.DM2_WaitForm), true, true);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -176,8 +175,7 @@ namespace DirectoryManager2
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
-            this.ribbonPageGroup2,
-            this.ribbonPageGroup3});
+            this.ribbonPageGroup2});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Tools";
             // 
@@ -189,17 +187,13 @@ namespace DirectoryManager2
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem5);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
             // layoutControl1
             // 
@@ -220,6 +214,13 @@ namespace DirectoryManager2
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // harmonizeFiles1
+            // 
+            this.harmonizeFiles1.Location = new System.Drawing.Point(12, 12);
+            this.harmonizeFiles1.Name = "harmonizeFiles1";
+            this.harmonizeFiles1.Size = new System.Drawing.Size(954, 154);
+            this.harmonizeFiles1.TabIndex = 13;
+            // 
             // cutFilesFromFolders1
             // 
             this.cutFilesFromFolders1.Location = new System.Drawing.Point(12, 170);
@@ -229,7 +230,7 @@ namespace DirectoryManager2
             // 
             // replaceFilename2
             // 
-            this.replaceFilename2.Location = new System.Drawing.Point(12, 1074);
+            this.replaceFilename2.Location = new System.Drawing.Point(12, 1100);
             this.replaceFilename2.Name = "replaceFilename2";
             this.replaceFilename2.Size = new System.Drawing.Size(954, 100);
             this.replaceFilename2.TabIndex = 11;
@@ -243,7 +244,7 @@ namespace DirectoryManager2
             // 
             // settingsGrid1
             // 
-            this.settingsGrid1.Location = new System.Drawing.Point(12, 702);
+            this.settingsGrid1.Location = new System.Drawing.Point(12, 728);
             this.settingsGrid1.Name = "settingsGrid1";
             this.settingsGrid1.Size = new System.Drawing.Size(954, 48);
             this.settingsGrid1.TabIndex = 8;
@@ -252,19 +253,19 @@ namespace DirectoryManager2
             // 
             this.harmonizeCollections1.Location = new System.Drawing.Point(12, 546);
             this.harmonizeCollections1.Name = "harmonizeCollections1";
-            this.harmonizeCollections1.Size = new System.Drawing.Size(954, 152);
+            this.harmonizeCollections1.Size = new System.Drawing.Size(954, 178);
             this.harmonizeCollections1.TabIndex = 7;
             // 
             // checkCollection1
             // 
-            this.checkCollection1.Location = new System.Drawing.Point(12, 888);
+            this.checkCollection1.Location = new System.Drawing.Point(12, 914);
             this.checkCollection1.Name = "checkCollection1";
             this.checkCollection1.Size = new System.Drawing.Size(954, 182);
             this.checkCollection1.TabIndex = 6;
             // 
             // createFolders1
             // 
-            this.createFolders1.Location = new System.Drawing.Point(12, 754);
+            this.createFolders1.Location = new System.Drawing.Point(12, 780);
             this.createFolders1.Name = "createFolders1";
             this.createFolders1.Size = new System.Drawing.Size(954, 130);
             this.createFolders1.TabIndex = 5;
@@ -291,7 +292,7 @@ namespace DirectoryManager2
             this.layoutControlItem9,
             this.layoutControlItem6});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(978, 1186);
+            this.Root.Size = new System.Drawing.Size(978, 1212);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -306,7 +307,7 @@ namespace DirectoryManager2
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.createFolders1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 742);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 768);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(958, 134);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -315,7 +316,7 @@ namespace DirectoryManager2
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.checkCollection1;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 876);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 902);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(958, 186);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -326,14 +327,14 @@ namespace DirectoryManager2
             this.layoutControlItem4.Control = this.harmonizeCollections1;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 534);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(958, 156);
+            this.layoutControlItem4.Size = new System.Drawing.Size(958, 182);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.settingsGrid1;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 690);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 716);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(958, 52);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
@@ -351,7 +352,7 @@ namespace DirectoryManager2
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.replaceFilename2;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 1062);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 1088);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(958, 104);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
@@ -366,17 +367,6 @@ namespace DirectoryManager2
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
-            // splashScreenManager2
-            // 
-            this.splashScreenManager2.ClosingDelay = 500;
-            // 
-            // harmonizeFiles1
-            // 
-            this.harmonizeFiles1.Location = new System.Drawing.Point(12, 12);
-            this.harmonizeFiles1.Name = "harmonizeFiles1";
-            this.harmonizeFiles1.Size = new System.Drawing.Size(954, 154);
-            this.harmonizeFiles1.TabIndex = 13;
-            // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.harmonizeFiles1;
@@ -385,6 +375,10 @@ namespace DirectoryManager2
             this.layoutControlItem6.Size = new System.Drawing.Size(958, 158);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
+            // 
+            // splashScreenManager2
+            // 
+            this.splashScreenManager2.ClosingDelay = 500;
             // 
             // DM2_Main
             // 
@@ -447,7 +441,6 @@ namespace DirectoryManager2
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private CutFilesFromFolders cutFilesFromFolders1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private HarmonizeFiles harmonizeFiles1;
