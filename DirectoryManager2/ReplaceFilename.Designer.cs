@@ -45,8 +45,6 @@ namespace DirectoryManager2
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
@@ -61,12 +59,10 @@ namespace DirectoryManager2
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.simpleButton4);
             this.layoutControl1.Controls.Add(this.simpleButton3);
             this.layoutControl1.Controls.Add(this.textEdit3);
             this.layoutControl1.Controls.Add(this.textEdit2);
@@ -127,7 +123,7 @@ namespace DirectoryManager2
             // 
             this.listBoxControl1.Location = new System.Drawing.Point(12, 38);
             this.listBoxControl1.Name = "listBoxControl1";
-            this.listBoxControl1.Size = new System.Drawing.Size(1042, 365);
+            this.listBoxControl1.Size = new System.Drawing.Size(1042, 391);
             this.listBoxControl1.StyleController = this.layoutControl1;
             this.listBoxControl1.TabIndex = 6;
             // 
@@ -162,8 +158,7 @@ namespace DirectoryManager2
             this.layoutControlItem5,
             this.layoutControlItem6,
             this.layoutControlItem4,
-            this.layoutControlItem7,
-            this.layoutControlItem8});
+            this.layoutControlItem7});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1066, 491);
             this.Root.TextVisible = false;
@@ -191,7 +186,7 @@ namespace DirectoryManager2
             this.layoutControlItem3.Control = this.listBoxControl1;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(1046, 369);
+            this.layoutControlItem3.Size = new System.Drawing.Size(1046, 395);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -231,25 +226,6 @@ namespace DirectoryManager2
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Location = new System.Drawing.Point(12, 407);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(1042, 22);
-            this.simpleButton4.StyleController = this.layoutControl1;
-            this.simpleButton4.TabIndex = 11;
-            this.simpleButton4.Text = "Dokus bereinigen";
-            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.simpleButton4;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 395);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(1046, 26);
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem8.TextVisible = false;
-            // 
             // ReplaceFilename
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,7 +247,6 @@ namespace DirectoryManager2
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -294,7 +269,5 @@ namespace DirectoryManager2
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
     }
 }
